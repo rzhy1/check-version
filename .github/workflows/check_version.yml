@@ -33,7 +33,11 @@ jobs:
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
-        echo "1" >> README.md
+        echo "1111111111111" >> README.md
+        output=$(python check_version.py)
+        echo "Script output:"
+        echo "$output"
+        echo "$output" > README.md
     - name: Display README.md content (structured)
       run: cat README.md
     - name: Commit change
