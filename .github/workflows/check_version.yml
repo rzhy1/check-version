@@ -33,6 +33,7 @@ jobs:
       run: getfattr -d README.md
     - name: Check Version
       run: |
+        echo "1" >> README.md
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
