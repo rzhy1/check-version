@@ -18,9 +18,6 @@ on:
   schedule:
     - cron: "0 0 * * *"
 
-permissions:
-  actions: write  # 授予 actions 权限
-
 jobs:
   main:
     name: Check Version
@@ -33,19 +30,6 @@ jobs:
         cache: 'pip'
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Debug
-      run: |
-          echo "API URL: https://api.github.com/repos/${{ github.repository }}/actions/workflows/check_version.yml/dispatches"
-          echo "Request Body: {\"ref\":\"main\"}"
-          echo "The secret is: ${{ secrets.check_version1234 }}"
-    - name: Trigger Workflow Dispatch
-      run: |
-          curl -X POST \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: ${{ secrets.check_version1234 }}" \
-            -H "User-Agent: My-GitHub-Action" \
-            https://api.github.com/repos/${{ github.repository }}/actions/workflows/check_version.yml/dispatches \
-            -d '{"ref":"main"}'
     - name: Check Version
       run: |
         python check_version.py > README.md
