@@ -27,19 +27,13 @@ jobs:
         check-latest: true
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Read file and create annotation
-      run: |
-          content=$(cat README.md)
-          echo "::notice title=README.md content::$content"
-    - name: Display README.md content (structured)
-      run: cat README.md
     - name: Check Version
       run: |
-        echo "1" >> README.md
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
+        echo "1" >> README.md
     - name: Display README.md content (structured)
       run: cat README.md
     - name: Commit change
