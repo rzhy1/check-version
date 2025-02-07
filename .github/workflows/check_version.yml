@@ -27,7 +27,8 @@ jobs:
         check-latest: true
     - name: Install dependencies
       run: pip install -r requirements.txt
-
+    - name: Get Extended Attributes
+      run: getfattr -d README.md
     - name: Check Version
       run: |
         output=$(python check_version.py)
