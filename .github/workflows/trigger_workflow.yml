@@ -1,0 +1,22 @@
+name: Trigger Other Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message to include in the triggered workflow (optional)'
+        required: false
+permissions:
+  actions: write  # 授予 actions 权限
+
+jobs:
+  trigger_other:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Workflow Dispatch
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.check_version1234 }}" \
+            -H "User-Agent: My-GitHub-Action" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/check_version.yml/dispatches \
+            -d '{"ref":"main"}'
