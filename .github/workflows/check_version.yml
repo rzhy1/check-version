@@ -32,7 +32,10 @@ jobs:
       run: pip install -r requirements.txt
     - name: Check Version
       run: |
-        python check_version.py > README.md
+        output=$(python check_version.py)
+        echo "Script output:"
+        echo "$output"
+        echo "$output" > README.md
     - name: Commit change
       run: |
           git config --local user.email "actions@github.com"
