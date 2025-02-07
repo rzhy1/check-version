@@ -32,16 +32,22 @@ jobs:
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
-    - name: Git Status
-      run: git status
+    - name: Debug
+      run: |
+        echo "README.md content:"
+        od -c README.md
+        echo "Script output:"
+        output=$(python check_version.py)
+        echo "$output"
+        echo "Script output (od):"
+        echo "$output" | od -c
     - name: Commit change
       run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git pull origin main -f
           git add README.md -f
-          git diff --cached --exit-code || echo "Changes detected!" # 如果存在不同，返回非0状态码
-          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息" || echo "No changes to commit"
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息"
     - name: Push
       uses:  ad-m/github-push-action@master
       with:
