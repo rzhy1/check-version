@@ -42,7 +42,8 @@ jobs:
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
-        echo "$output" > README.md
+        echo "$output" > README.md.new
+        mv README.md.new README.md
         echo "3333333333333"
         cat README.md
     - name: Display README.md content (structured)
