@@ -28,6 +28,8 @@ jobs:
       run: pip install -r requirements.txt
     - name: Check Version
       run: |
+        date
+        timedatectl
         echo "1" > README.md
         echo "1111111"
         cat README.md
