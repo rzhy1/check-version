@@ -10,7 +10,7 @@
 
     <script>
         document.getElementById("triggerButton").addEventListener("click", function() {
-            fetch("https://github.com/rzhy1/check-version/actions/workflows/check_version.yml/dispatches", {
+            fetch("https://api.github.com/repos/rzhy1/check-version/actions/workflows/check_version.yml/dispatches", {
                 method: "POST",
                 headers: {
                     "Accept": "application/vnd.github.v3+json",
