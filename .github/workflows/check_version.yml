@@ -32,6 +32,8 @@ jobs:
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
+    - name: Standardize Line Endings
+      run: sed -i 's/\r$//' README.md
     - name: Debug
       run: |
         echo "README.md content:"
