@@ -30,21 +30,10 @@ jobs:
       run: pip install -r requirements.txt
     - name: Check Version
       run: |
-        date
-        timedatectl
-        echo "1" > README.md
-        echo "1111111"
-        cat README.md
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
-        echo "$output" > README.md.new
-        mv README.md.new README.md
-        echo "22222222"
-        cat README.md
-        echo "2" > README.md
-    - name: Display README.md content (structured)
-      run: cat README.md
+        echo "$output" > README.md
     - name: Commit change
       run: |
           git config --global core.autocrlf false
