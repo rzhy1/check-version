@@ -40,7 +40,8 @@ jobs:
           git config --local user.name "GitHub Actions"
           git pull origin main -f
           git add README.md -f
-          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息"
+          git diff --cached --exit-code || echo "Changes detected!" # 如果存在不同，返回非0状态码
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息" || echo "No changes to commit"
     - name: Push
       uses:  ad-m/github-push-action@master
       with:
