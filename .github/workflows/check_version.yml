@@ -24,6 +24,8 @@ jobs:
         python-version: '3.13'
         cache: 'pip'
         check-latest: true
+    - name: Set timezone
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Check Version
