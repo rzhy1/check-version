@@ -28,10 +28,7 @@ jobs:
       run: pip install -r requirements.txt
     - name: Check Version
       run: |
-        output=$(python check_version.py)
-        echo "Script output:"
-        echo "$output"
-        echo "$output" > README.md
+        python check_version.py > README.md
         TZ='Asia/Shanghai'
         NOW=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S %Z%z')
         TIMESTAMP_LINE="### <b><span style=\"color:black\">最新更新时间: ${NOW}</span></b> ###"
