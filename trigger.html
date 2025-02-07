@@ -13,8 +13,8 @@
             fetch("https://api.github.com/repos/rzhy1/check-version/actions/workflows/check_version.yml/dispatches", {
                 method: "POST",
                 headers: {
-                    #"Accept": "application/vnd.github.v3+json",
-                    #"Authorization": "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",
+                    "Accept": "application/vnd.github.v3+json",
+                    "Authorization": "token ${{ secrets.GITHUB_TOKEN_TRIGGER }}",
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({ ref: "main" })
