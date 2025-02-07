@@ -2,10 +2,6 @@ name: Check Version
 
 on:
   workflow_dispatch:
-    inputs:
-      message:
-        description: 'Message to include in the triggered workflow (optional)'
-        required: false
   push:
     branches:
       - main
