@@ -13,8 +13,8 @@ proxies = None  # 不使用代理
 
 # 定义当前版本
 current_versions = {
-    "zlib": "1.3.0",
-    "zstd": "1.5.5",
+    "zlib": "1.3.1",
+    "zstd": "1.5.6",
     "gmp": "6.3.0",
     "isl": "0.27",
     "mpfr": "4.2.1",
@@ -34,7 +34,7 @@ current_versions = {
     "pcre2": "10.45",
     "expat": "2.6.4",
     "libmetalink": "0.1.3",
-    "gnutls": "3.8.7",
+    "gnutls": "3.8.8",
     "nghttp2": "1.64.0",
     "libmicrohttpd": "1.0.1",
 }
