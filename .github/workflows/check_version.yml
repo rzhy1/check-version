@@ -12,7 +12,7 @@ on:
     types:
       - released
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */6 * * *"  # 每 6 小时运行一次
 jobs:
   main:
     name: Check Version
