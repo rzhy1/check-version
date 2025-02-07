@@ -30,7 +30,7 @@ jobs:
 
     - name: Check Version
       run: |
-        chmod +w README.md
+        sudo chmod +w README.md
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
