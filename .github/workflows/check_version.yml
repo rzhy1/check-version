@@ -27,10 +27,12 @@ jobs:
         check-latest: true
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Install attr
-      run: sudo apt-get update && sudo apt-get install attr
-    - name: Get Extended Attributes
-      run: getfattr -d README.md
+    - name: Read file and create annotation
+      run: |
+          content=$(cat README.md)
+          echo "::notice title=README.md content::$content"
+    - name: Display README.md content (structured)
+      run: jq -R . README.md
     - name: Check Version
       run: |
         echo "1" >> README.md
