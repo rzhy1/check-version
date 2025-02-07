@@ -13,7 +13,6 @@ on:
       - released
   schedule:
     - cron: "0 0 * * *"
-
 jobs:
   main:
     name: Check Version
