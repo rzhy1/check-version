@@ -27,27 +27,12 @@ jobs:
         check-latest: true
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Convert README.md to UTF-8
-      run: |
-        if ! file -i README.md | grep -q "charset=utf-8"; then
-          iconv -f "$(file -i README.md | sed -n 's/.*charset=\(.*\);?/\1/p')" -t UTF-8//TRANSLIT//IGNORE README.md > README.md.new
-          mv README.md.new README.md
-        fi
     - name: Check Version
       run: |
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
-    - name: Debug
-      run: |
-        echo "README.md content:"
-        od -c README.md
-        echo "Script output:"
-        output=$(python check_version.py)
-        echo "$output"
-        echo "Script output (od):"
-        echo "$output" | od -c
     - name: Commit change
       run: |
           git config --local user.email "actions@github.com"
