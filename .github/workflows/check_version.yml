@@ -34,7 +34,6 @@ jobs:
         echo "$output" > README.md
         TZ='Asia/Shanghai'
         NOW=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S %Z%z')
-        NOW=$(date '+%Y-%m-%d %H:%M:%S UTC')
         TIMESTAMP_LINE="---- 最新更新时间: ${NOW} ----"
         README_CONTENT=$(cat README.md)
         NEW_README_CONTENT="${TIMESTAMP_LINE}\n${README_CONTENT}"
