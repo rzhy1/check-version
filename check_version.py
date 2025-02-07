@@ -2,6 +2,7 @@ import requests
 import re
 from packaging import version
 import time
+from datetime import datetime
 
 # 配置代理 (根据需要修改)
 # 如果不需要代理，设置为 None 或注释掉
@@ -280,19 +281,25 @@ def get_latest_version(program, proxies=None):
 
 # 检查更新
 update_found = False
+output_lines = []  # 用于存储输出的列表
 
+# 获取当前时间
+now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+timestamp_line = f"<!-- 最新更新时间: {now} -->\n"  # 构建时间戳行
+
+output_lines.append(timestamp_line) #只在最前面加一个
 for program, current_version in current_versions.items():
     try:
         latest_version, download_url = get_latest_version(program)
         if version.parse(latest_version) > version.parse(current_version):
-            print(f"- ⭐{program} {current_version} 有最新版  {download_url}")
+            output_lines.append(f"- ⭐{program} {current_version} 有最新版  {download_url}")
             update_found = True
         else:
-            print(f"- {program} {current_version} 已是最新版 {download_url}")
+            output_lines.append(f"- {program} {current_version} 已是最新版 {download_url}")
     except Exception as e:
-        print(f"- {program} 获取最新版本失败: {e}")
+        output_lines.append(f"- {program} 获取最新版本失败: {e}")
 
-# 如果没有发现更新
-if not update_found:
-    print("- 检测结束，所有程序都没有更新的版本")
-print("- 检测结束")
+# 构建最终输出
+output = "".join(output_lines) + "\n- 检测结束"
+
+print(output)
