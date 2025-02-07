@@ -2,10 +2,6 @@ name: Check Version
 
 on:
   workflow_dispatch:
-    inputs:
-      message:
-        description: 'Message to include in the triggered workflow (optional)'
-        required: false
   push:
     branches:
       - main
@@ -30,13 +26,6 @@ jobs:
         cache: 'pip'
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Trigger Workflow Dispatch
-        run: |
-          curl -X POST \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN_TRIGGER }}" \
-            https://api.github.com/repos/rzhy1/check-version/actions/workflows/check_version.yml/dispatches \
-            -d '{"ref":"main", "inputs": {"message": "${{ github.event.inputs.message }}" }}'
     - name: Check Version
       run: |
         python check_version.py > README.md
