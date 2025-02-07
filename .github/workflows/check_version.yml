@@ -29,6 +29,9 @@ jobs:
       run: pip install -r requirements.txt
     - name: Check Version
       run: |
+        echo "1" > README.md
+        echo "222222"
+        cat README.md
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
