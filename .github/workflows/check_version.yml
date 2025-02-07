@@ -40,7 +40,7 @@ jobs:
       run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git pull origin main
+          git pull origin main -f
           git add README.md
           git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息"
     - name: Push
