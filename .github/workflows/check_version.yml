@@ -32,7 +32,7 @@ jobs:
           content=$(cat README.md)
           echo "::notice title=README.md content::$content"
     - name: Display README.md content (structured)
-      run: jq -R . README.md
+      run: cat README.md
     - name: Check Version
       run: |
         echo "1" >> README.md
@@ -40,6 +40,8 @@ jobs:
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
+    - name: Display README.md content (structured)
+      run: cat README.md
     - name: Commit change
       run: |
           git config --local user.email "actions@github.com"
