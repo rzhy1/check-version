@@ -38,7 +38,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git pull origin main -f
           git add README.md
-          git commit --allow-empty
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息"
     - name: Push
       uses:  ad-m/github-push-action@master
       with:
