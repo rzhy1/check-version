@@ -1,0 +1,42 @@
+name: Check Version
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+  release:
+    types:
+      - released
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  main:
+    name: Check Version
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+        cache: 'pip'
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Check Version
+      run: |
+        python check_version.py > README.md
+    - name: Commit change
+      run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git pull origin master
+          git add README.md
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息"
+    - name: Push
+      uses:  ad-m/github-push-action@master
+      with:
+        branch: main
