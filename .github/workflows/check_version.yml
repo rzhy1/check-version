@@ -32,6 +32,8 @@ jobs:
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
+    - name: Git Status
+      run: git status
     - name: Commit change
       run: |
           git config --local user.email "actions@github.com"
