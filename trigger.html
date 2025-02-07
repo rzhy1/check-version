@@ -14,7 +14,7 @@
                 method: "POST",
                 headers: {
                     "Accept": "application/vnd.github.v3+json",
-                    "Authorization": "${{ secrets.GITHUB_TOKEN_TRIGGER }}",
+                    "Authorization": "token ${{ secrets.GITHUB_TOKEN_TRIGGER }}",
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({ ref: "main" })
