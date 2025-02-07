@@ -26,14 +26,18 @@ jobs:
         cache: 'pip'
     - name: Install dependencies
       run: pip install -r requirements.txt
+    - name: Convert README.md to UTF-8
+      run: |
+        if ! file -i README.md | grep -q "charset=utf-8"; then
+          iconv -f "$(file -i README.md | sed -n 's/.*charset=\(.*\);?/\1/p')" -t UTF-8//TRANSLIT//IGNORE README.md > README.md.new
+          mv README.md.new README.md
+        fi
     - name: Check Version
       run: |
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
-    - name: Standardize Line Endings
-      run: sed -i 's/\r$//' README.md
     - name: Debug
       run: |
         echo "README.md content:"
