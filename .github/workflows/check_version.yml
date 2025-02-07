@@ -2,6 +2,7 @@ name: Check Version
 
 on:
   workflow_dispatch:
+    types: [trigger_workflow]
   push:
     branches:
       - main
