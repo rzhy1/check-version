@@ -38,6 +38,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git pull origin main -f
           git add README.md -f
+          git commit -m "Update version information"
     - name: Push
       uses:  ad-m/github-push-action@master
       with:
