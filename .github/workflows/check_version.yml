@@ -6,9 +6,6 @@ on:
       message:
         description: 'Message to include in the triggered workflow (optional)'
         required: false
-permissions:
-  actions: write  # 授予 actions 权限
-  
   push:
     branches:
       - main
@@ -20,6 +17,9 @@ permissions:
       - released
   schedule:
     - cron: "0 0 * * *"
+
+permissions:
+  actions: write  # 授予 actions 权限
 
 jobs:
   main:
