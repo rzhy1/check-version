@@ -17,6 +17,8 @@ on:
       - released
   schedule:
     - cron: "0 0 * * *"
+permissions:
+  actions: write  # 授予 actions 权限
 
 jobs:
   main:
