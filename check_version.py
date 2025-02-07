@@ -295,4 +295,4 @@ for program, current_version in current_versions.items():
 # 如果没有发现更新
 if not update_found:
     print("- 检测结束，所有程序都没有更新的版本")
-print("- 检测结束")
+print("- ******检测结束******")
