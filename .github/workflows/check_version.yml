@@ -19,6 +19,8 @@ on:
     - cron: "0 0 * * *"
 permissions:
   actions: write  # 授予 actions 权限
+  contents: write #需要添加 contents 权限才能push
+
 
 jobs:
   main:
