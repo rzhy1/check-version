@@ -32,6 +32,13 @@ jobs:
         echo "Script output:"
         echo "$output"
         echo "$output" > README.md
+        
+        NOW=$(date '+%Y-%m-%d %H:%M:%S UTC')
+        TIMESTAMP_LINE="<!-- 最新更新时间: ${NOW} -->"
+        README_CONTENT=$(cat README.md)
+        NEW_README_CONTENT="${TIMESTAMP_LINE}\n${README_CONTENT}"
+        echo "$NEW_README_CONTENT" > README.md
+        
     - name: Commit change
       run: |
           git config --local user.email "actions@github.com"
