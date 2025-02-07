@@ -37,7 +37,7 @@ jobs:
         TIMESTAMP_LINE="<!-- 最新更新时间: ${NOW} -->"
         README_CONTENT=$(cat README.md)
         NEW_README_CONTENT="${TIMESTAMP_LINE}\n${README_CONTENT}"
-        echo "$NEW_README_CONTENT" > README.md
+        echo -e "${NEW_README_CONTENT}" > README.md
         
     - name: Commit change
       run: |
