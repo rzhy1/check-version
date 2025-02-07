@@ -39,6 +39,7 @@ jobs:
         mv README.md.new README.md
         echo "22222222"
         cat README.md
+        echo "2" > README.md
     - name: Display README.md content (structured)
       run: cat README.md
     - name: Commit change
