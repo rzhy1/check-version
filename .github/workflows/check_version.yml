@@ -27,10 +27,10 @@ jobs:
         check-latest: true
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: Check directory permissions
-      run: ls -l .
+
     - name: Check Version
       run: |
+        chmod +w README.md
         output=$(python check_version.py)
         echo "Script output:"
         echo "$output"
