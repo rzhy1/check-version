@@ -38,6 +38,7 @@ jobs:
           echo "API URL: https://api.github.com/repos/${{ github.repository }}/actions/workflows/check_version.yml/dispatches"
           echo "Authorization: token ${{ secrets.GITHUB_TOKEN_TRIGGER }}"
           echo "Request Body: {\"ref\":\"main\"}"
+          echo "The secret is: ${{ secrets.GITHUB_TOKEN_TRIGGER }}"
     - name: Trigger Workflow Dispatch
       run: |
           curl -X POST \
