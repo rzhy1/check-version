@@ -23,7 +23,7 @@ jobs:
       with:
         python-version: '3.13'
         cache: 'pip'
-        check-latest: true
+        #check-latest: true
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Check Version
@@ -34,12 +34,10 @@ jobs:
         echo "$output" > README.md
     - name: Commit change
       run: |
-          git config --global core.autocrlf false
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git pull origin main -f
           git add README.md -f
-          #git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 更新版本信息"
     - name: Push
       uses:  ad-m/github-push-action@master
       with:
