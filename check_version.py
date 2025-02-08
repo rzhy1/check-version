@@ -34,7 +34,7 @@ current_versions = {
     "pcre2": "10.45",
     "expat": "2.6.4",
     "libmetalink": "0.1.3",
-    "gnutls": "3.8.8",
+    "gnutls": "3.8.9",
     "nghttp2": "1.64.0",
     "libmicrohttpd": "1.0.1",
 }
