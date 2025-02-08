@@ -285,7 +285,7 @@ for program, current_version in current_versions.items():
     try:
         latest_version, download_url = get_latest_version(program)
         if version.parse(latest_version) > version.parse(current_version):
-            print(f"- 🔴{program} {current_version} 有最新版  {download_url}")
+            print(f"- 🔴🔴🔴{program} {current_version} 有最新版  {download_url}")
             update_found = True
         else:
             print(f"- {program} {current_version} 已是最新版 {download_url}")
