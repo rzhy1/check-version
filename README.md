@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-08 09:37:43 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-08 14:26:45 CST+0800</span></b> ###
 - zlib 1.3.1 已是最新版 https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
 - zstd 1.5.6 已是最新版 https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz
 - gmp 6.3.0 已是最新版 https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
@@ -20,7 +20,7 @@
 - pcre2 10.45 已是最新版 https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2
 - expat 2.6.4 已是最新版 https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.bz2
 - libmetalink 0.1.3 已是最新版 https://github.com/metalink-dev/libmetalink/releases/download/release-0.1.3/libmetalink-0.1.3.tar.bz2
-- gnutls 3.8.8 已是最新版 https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.8.tar.xz
+- ⭐gnutls 3.8.8 有最新版  https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
 - nghttp2 1.64.0 已是最新版 https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.gz
 - libmicrohttpd 1.0.1 已是最新版 https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.1.tar.gz
 - ******检测结束******
