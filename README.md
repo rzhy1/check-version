@@ -15,7 +15,7 @@
 - gpgme 1.24.1 已是最新版 https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.1.tar.bz2
 - c-ares 1.34.4 已是最新版 https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz
 - libiconv 1.18 已是最新版 https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz
-- ⭐libidn2 2.3.0 有最新版  https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
+- 🚩🚩libidn2 2.3.0 有最新版  https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
 - libpsl 0.21.5 已是最新版 https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
 - pcre2 10.45 已是最新版 https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2
 - expat 2.6.4 已是最新版 https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.bz2
