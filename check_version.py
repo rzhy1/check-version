@@ -26,7 +26,7 @@ current_versions = {
     "libunistring": "1.3",
     "gpg-error": "1.51",
     "libassuan": "3.0.1",
-    "gpgme": "1.24.1",
+    "gpgme": "1.24.2",
     "c-ares": "1.34.4",
     "libiconv": "1.18",
     "libidn2": "2.3.0",
