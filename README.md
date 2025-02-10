@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-10 14:30:36 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-10 20:41:56 CST+0800</span></b> ###
 - zlib 1.3.1 已是最新版 https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
 - zstd 1.5.6 已是最新版 https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz
 - gmp 6.3.0 已是最新版 https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
@@ -12,7 +12,7 @@
 - libunistring 1.3 已是最新版 https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.gz
 - gpg-error 1.51 已是最新版 https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.gz
 - libassuan 3.0.1 已是最新版 https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2
-- gpgme 1.24.1 已是最新版 https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.1.tar.bz2
+- 🔴🔴🔴gpgme 1.24.1 有最新版  https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.2.tar.bz2
 - c-ares 1.34.4 已是最新版 https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz
 - libiconv 1.18 已是最新版 https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz
 - 🔴🔴🔴libidn2 2.3.0 有最新版  https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
