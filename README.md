@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-11 14:29:45 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-11 20:02:20 CST+0800</span></b> ###
 - zlib 1.3.1 已是最新版 https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
 - zstd 1.5.6 已是最新版 https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz
 - gmp 6.3.0 已是最新版 https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
@@ -23,4 +23,9 @@
 - gnutls 3.8.9 已是最新版 https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
 - nghttp2 1.64.0 已是最新版 https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.gz
 - libmicrohttpd 1.0.1 已是最新版 https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.1.tar.gz
+- zlib-ng 获取最新版本失败: retry() got an unexpected keyword argument 'program'
+- libssh2 获取最新版本失败: retry() got an unexpected keyword argument 'program'
+- libxml2 获取最新版本失败: retry() got an unexpected keyword argument 'program'
+- xz 获取最新版本失败: retry() got an unexpected keyword argument 'program'
+- 🔴🔴🔴sqlite 3.44.0 有最新版  https://www.sqlite.org/autoconf-3490000.tar.gz
 - ******检测结束******
