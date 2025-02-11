@@ -328,40 +328,34 @@ def get_latest_version(program, proxies=None):
 
 
     elif program == "sqlite":
+        # 获取最新版本号
         index_url = "https://www.sqlite.org/index.html"
-        response = retry(requests.get, index_url, program=program, proxies=proxies)
+        response = retry(requests.get, index_url, proxies=proxies)
         html = response.text
+        # 使用正则表达式提取版本号
         version_match = re.search(r'>Version ([0-9.]+)<', html)
         if not version_match:
-            return None, None  # Or raise an exception if you prefer
+            return None, None
         latest_version = version_match.group(1)
 
-        # Pad the version number for correct comparison
-        version_parts = latest_version.split(".")
-        if len(version_parts) >= 3:  #如果不足三位，则认为是不需要进行补零
-            latest_version = ".".join([
-              version_parts[0],
-              version_parts[1].zfill(2),  # 补零到两位数
-              version_parts[2].zfill(2)   # 补零到两位数
-            ])
-
-
-        download_page_url = "https://www.sqlite.org/download.html"
-        response = retry(requests.get, download_page_url, program=program, proxies=proxies)
+        # 获取下载页面内容
+        download_url = "https://www.sqlite.org/download.html"
+        response = retry(requests.get, download_url, proxies=proxies)
         html = response.text
-        # Use a more robust regular expression to find the autoconf tarball URL
-        match = re.search(r'<a href="(.*?autoconf.*?\.(?:tar\.gz))">', html)
-        if not match:
-           raise ValueError("Download URL not found on download page")
-        tarball_url = match.group(1)
 
-        # Handle relative URLs
-        if tarball_url.startswith('/'):
-            download_url = "https://www.sqlite.org" + tarball_url
-        elif tarball_url.startswith('http'):
-            download_url = tarball_url
-        else:
-            download_url = "https://www.sqlite.org/download/" + tarball_url
+        # 提取 CSV 数据部分
+        csv_data = re.search(r'Download product data for scripts to read(.*?)-->', html, re.DOTALL)
+        if not csv_data:
+            return None, None
+
+        # 提取 autoconf 的 tar.gz 文件链接
+        tarball_match = re.search(r'autoconf.*?\.tar\.gz', csv_data.group(1))
+        if not tarball_match:
+            return None, None
+
+        # 构建完整的下载链接
+        tarball_url = tarball_match.group(0)
+        download_url = f"https://www.sqlite.org/{tarball_url}"
         return latest_version, download_url
 
 
