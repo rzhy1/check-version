@@ -280,7 +280,7 @@ def get_latest_version(program, proxies=None):
         download_url = f"https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-{latest_version}.tar.gz"
         return latest_version, download_url
 
-     elif program == "zlib-ng":
+    elif program == "zlib-ng":
         url = "https://api.github.com/repos/zlib-ng/zlib-ng/releases/latest"
         response = retry(requests.get, url, program=program, proxies=proxies)
         data = response.json()
