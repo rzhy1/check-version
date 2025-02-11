@@ -371,11 +371,17 @@ for program, current_version in current_versions.items():
         if latest_version is None or download_url is None:  # SQLite check
             print(f"- {program}: 无法获取最新版本信息")
             continue
+
+        # 判断是否有新版本
         if version.parse(latest_version) > version.parse(current_version):
-            print(f"- 🔴🔴🔴 {program} {current_version} 有新版本 {latest_version}: {download_url}")
+            message = f"- 🔴🔴🔴 {program} {current_version} 有新版本 {latest_version} ([下载地址]({download_url}))"
             update_found = True
         else:
-            print(f"- {program} {current_version} 已是最新版本: {download_url}")
+            message = f"- {program} {current_version} 已是最新版本 ([下载地址]({download_url}))"
+
+        # 打印带超链接的消息
+        print(message)
+
     except Exception as e:
         print(f"- {program} 获取最新版本失败: {e}")
 
