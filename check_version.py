@@ -37,6 +37,11 @@ current_versions = {
     "gnutls": "3.8.9",
     "nghttp2": "1.64.0",
     "libmicrohttpd": "1.0.1",
+    "zlib-ng": "1.3.1",
+    "libssh2": "1.3.1",
+    "libxml2": "1.3.1",
+    "xz": "1.3.1",
+    "sqlite": "3.44.0",
 }
 
 ## 重试函数 (支持代理)
@@ -273,6 +278,70 @@ def get_latest_version(program, proxies=None):
         matches = re.findall(r'href="libmicrohttpd-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-{latest_version}.tar.gz"
+        return latest_version, download_url
+
+     elif program == "zlib-ng":
+        url = "https://api.github.com/repos/zlib-ng/zlib-ng/releases/latest"
+        response = retry(requests.get, url, program=program, proxies=proxies)
+        data = response.json()
+        latest_version = data["tag_name"].lstrip("v")
+        download_url = data["assets"][0]["browser_download_url"]
+        return latest_version, download_url
+
+    elif program == "libssh2":
+        url = "https://libssh2.org/download/"
+        response = retry(requests.get, url, program=program, proxies=proxies)
+        matches = re.findall(r'href="libssh2-([0-9.]+)\.tar\.(xz|gz)"', response.text)
+        latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
+        download_url = f"https://libssh2.org/download/libssh2-{latest_version}.tar.xz"
+        return latest_version, download_url
+
+    elif program == "libxml2":
+        base_url = "https://download.gnome.org/sources/libxml2/"
+        response = retry(requests.get, base_url, program=program, proxies=proxies)
+        html = response.text
+        main_versions = re.findall(r'href="(\d+\.\d+/)"', html)
+        main_versions = [v.strip('/') for v in main_versions]
+        main_versions.sort(key=lambda v: version.parse(v), reverse=True)
+        latest_main = main_versions[0]
+        response = retry(requests.get, f"{base_url}{latest_main}/", program=program, proxies=proxies)
+        html = response.text
+        files = re.findall(r'href="(libxml2-(\d+\.\d+\.\d+)\.tar\.xz)"', html)
+        latest_file = max(files, key=lambda x: version.parse(x[1]))
+        download_url = f"{base_url}{latest_main}/{latest_file[0]}"
+        latest_version = latest_file[1]
+        return latest_version, download_url
+
+    elif program == "xz":
+        url = "https://sourceforge.net/projects/lzmautils/files/"
+        response = retry(requests.get, url, program=program, proxies=proxies)
+        html = response.text
+        match = re.search(r'xz-([0-9.]+)\.tar\.gz', html)
+        if not match:  # 增加对匹配失败的处理
+           raise ValueError(f"xz: 未找到版本号")
+        latest_version = match.group(1)
+        download_url = f"https://sourceforge.net/projects/lzmautils/files/xz-{latest_version}.tar.xz"
+        return latest_version, download_url
+
+    elif program == "sqlite":
+        index_url = "https://www.sqlite.org/index.html"
+        response = retry(requests.get, index_url, proxies=proxies)
+        html = response.text
+        version_match = re.search(r'>Version ([0-9.]+)<', html)
+        if not version_match:
+            return None, None
+        latest_version = version_match.group(1)
+        download_url = "https://www.sqlite.org/download.html"
+        response = retry(requests.get, download_url, proxies=proxies)
+        html = response.text
+        csv_data = re.search(r'Download product data for scripts to read(.*?)-->', html, re.DOTALL)
+        if not csv_data:
+            return None, None
+        tarball_match = re.search(r'autoconf.*?\.tar\.gz', csv_data.group(1))
+        if not tarball_match:
+            return None, None
+        tarball_url = tarball_match.group(0)
+        download_url = f"https://www.sqlite.org/{tarball_url}"
         return latest_version, download_url
         
     else:
