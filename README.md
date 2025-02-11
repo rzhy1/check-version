@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-11 20:14:45 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-11 20:16:04 CST+0800</span></b> ###
 - zlib 1.3.1 已是最新版本: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
 - zstd 1.5.6 已是最新版本: https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz
 - gmp 6.3.0 已是最新版本: https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
@@ -23,9 +23,9 @@
 - gnutls 3.8.9 已是最新版本: https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
 - nghttp2 1.64.0 已是最新版本: https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.gz
 - libmicrohttpd 1.0.1 已是最新版本: https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.1.tar.gz
-- 🔴🔴🔴 zlib-ng 2.1.6 有新版本 2.2.4: https://github.com/zlib-ng/zlib-ng/releases/download/2.2.4/zlib-ng-win-arm-compat.zip
-- 🔴🔴🔴 libssh2 1.11.0 有新版本 1.11.1: https://libssh2.org/download/libssh2-1.11.1.tar.xz
-- 🔴🔴🔴 libxml2 2.12.5 有新版本 2.13.5: https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.5.tar.xz
-- 🔴🔴🔴 xz 5.6.1 有新版本 5.6.4: https://sourceforge.net/projects/lzmautils/files/xz-5.6.4.tar.xz
-- 🔴🔴🔴 sqlite 3.45.1 有新版本 3.49.0: https://www.sqlite.org/autoconf-3490000.tar.gz
+- zlib-ng 2.2.4 已是最新版本: https://github.com/zlib-ng/zlib-ng/releases/download/2.2.4/zlib-ng-win-arm-compat.zip
+- libssh2 1.11.1 已是最新版本: https://libssh2.org/download/libssh2-1.11.1.tar.xz
+- libxml2 2.13.5 已是最新版本: https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.5.tar.xz
+- xz 5.6.4 已是最新版本: https://sourceforge.net/projects/lzmautils/files/xz-5.6.4.tar.xz
+- sqlite 3.49.0 已是最新版本: https://www.sqlite.org/autoconf-3490000.tar.gz
 - ******检测结束******
