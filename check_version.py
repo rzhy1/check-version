@@ -37,11 +37,11 @@ current_versions = {
     "gnutls": "3.8.9",
     "nghttp2": "1.64.0",
     "libmicrohttpd": "1.0.1",
-    "zlib-ng": "2.1.6",
-    "libssh2": "1.11.0",
-    "libxml2": "2.12.5",
-    "xz": "5.6.1",
-    "sqlite": "3.45.1",
+    "zlib-ng": "2.2.4",
+    "libssh2": "1.11.1",
+    "libxml2": "2.13.5",
+    "xz": "5.6.4",
+    "sqlite": "3.49.0",
 }
 
 # 重试函数 (支持代理)
