@@ -45,16 +45,16 @@ current_versions = {
 }
 
 ## 重试函数 (支持代理)
-def retry(func, url, max_retries=5, delay=2, proxies=None):
+def retry(func, url, program="请求", max_retries=5, delay=2, proxies=None, **kwargs):
     attempts = 0
     while attempts < max_retries:
         try:
-            response = func(url, proxies=proxies)  # 传递 proxies 参数给 requests.get
+            response = func(url, proxies=proxies, **kwargs)
             response.raise_for_status()
             return response
         except requests.exceptions.RequestException as e:
             attempts += 1
-            print(f"- {program}请求失败，重试中 ({attempts}/{max_retries})...")
+            print(f"- {program} 请求失败，重试中 ({attempts}/{max_retries})...: {e}")
             if attempts == max_retries:
                 raise e
             time.sleep(delay)
