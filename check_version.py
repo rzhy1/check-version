@@ -282,7 +282,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "zlib-ng":
         url = "https://api.github.com/repos/zlib-ng/zlib-ng/releases/latest"
-        response = retry(requests.get, url, program=program, proxies=proxies)
+        response = retry(requests.get, url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -290,7 +290,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libssh2":
         url = "https://libssh2.org/download/"
-        response = retry(requests.get, url, program=program, proxies=proxies)
+        response = retry(requests.get, url, proxies=proxies)
         matches = re.findall(r'href="libssh2-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://libssh2.org/download/libssh2-{latest_version}.tar.xz"
@@ -298,7 +298,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libxml2":
         base_url = "https://download.gnome.org/sources/libxml2/"
-        response = retry(requests.get, base_url, program=program, proxies=proxies)
+        response = retry(requests.get, url, proxies=proxies)
         html = response.text
         main_versions = re.findall(r'href="(\d+\.\d+/)"', html)
         main_versions = [v.strip('/') for v in main_versions]
@@ -314,7 +314,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "xz":
         url = "https://sourceforge.net/projects/lzmautils/files/"
-        response = retry(requests.get, url, program=program, proxies=proxies)
+        response = retry(requests.get, url, proxies=proxies)
         html = response.text
         match = re.search(r'xz-([0-9.]+)\.tar\.gz', html)
         if not match:  # 增加对匹配失败的处理
@@ -325,14 +325,14 @@ def get_latest_version(program, proxies=None):
 
     elif program == "sqlite":
         index_url = "https://www.sqlite.org/index.html"
-        response = retry(requests.get, index_url, proxies=proxies)
+        response = retry(requests.get, url, proxies=proxies)
         html = response.text
         version_match = re.search(r'>Version ([0-9.]+)<', html)
         if not version_match:
             return None, None
         latest_version = version_match.group(1)
         download_url = "https://www.sqlite.org/download.html"
-        response = retry(requests.get, download_url, proxies=proxies)
+        response = retry(requests.get, url, proxies=proxies)
         html = response.text
         csv_data = re.search(r'Download product data for scripts to read(.*?)-->', html, re.DOTALL)
         if not csv_data:
