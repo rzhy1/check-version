@@ -1,7 +1,8 @@
-### <b><span style="color:black">最新更新时间: 2025-02-13 02:12:05 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-13 04:10:13 CST+0800</span></b> ###
 - zlib 1.3.1 已是最新版本 ([下载地址](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz))
 - zstd 1.5.6 已是最新版本 ([下载地址](https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz))
 - gmp 6.3.0 已是最新版本 ([下载地址](https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz))
+- isl 请求失败，重试中 (1/5)...: 503 Server Error: Service Unavailable for url: https://libisl.sourceforge.io/
 - isl 0.27 已是最新版本 ([下载地址](https://libisl.sourceforge.io/isl-0.27.tar.xz))
 - mpfr 4.2.1 已是最新版本 ([下载地址](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz))
 - mpc 1.3.1 已是最新版本 ([下载地址](https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz))
