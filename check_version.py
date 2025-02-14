@@ -374,10 +374,10 @@ for program, current_version in current_versions.items():
 
         # 判断是否有新版本
         if version.parse(latest_version) > version.parse(current_version):
-            message = f"- 🔴🔴🔴 {program} {current_version} 有新版本 {latest_version} ([下载地址]({download_url}))"
+            message = f"- 🔴🔴🔴 {program} | {current_version} | 有新版本 {latest_version} ([下载地址]({download_url}))"
             update_found = True
         else:
-            message = f"- {program} {current_version} 已是最新版本 ([下载地址]({download_url}))"
+            message = f"- {program} | {current_version} | 已是最新版本 ([下载地址]({download_url}))"
 
         # 打印带超链接的消息
         print(message)
