@@ -44,9 +44,6 @@ current_versions = {
     "sqlite": "3.49.0",
 }
 
-# 初始化表格头
-table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
-
 # 重试函数 (支持代理)
 def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):  # 添加 program 参数
     attempts = 0
@@ -367,6 +364,9 @@ def get_latest_version(program, proxies=None):
 
 # 检查更新
 update_found = False
+
+# 初始化表格头
+table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
 
 for program, current_version in current_versions.items():
     try:
