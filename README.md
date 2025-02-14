@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-14 15:32:00 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-14 15:33:39 CST+0800</span></b> ###
 --- 错误信息 ---
 - zlib 获取最新版本失败: 404 Client Error: Not Found for url: https://api.github.com/repos/madler/zlib/releases/latest1
 ---
@@ -20,7 +20,7 @@
 | gpgme | 1.24.2 | 1.24.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.2.tar.bz2) |
 | c-ares | 1.34.4 | 1.34.4 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz) |
 | libiconv | 1.18 | 1.18 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz) |
-| libidn2 | 2.3.0 | 2.3.7 | 🔴 需更新 | [下载链接](https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz) |
+| libidn2 | 2.3.0 | 2.3.7 | 🔴🔴 需更新 | [下载链接](https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz) |
 | libpsl | 0.21.5 | 0.21.5 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz) |
 | pcre2 | 10.45 | 10.45 | 已是最新版 | [下载链接](https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2) |
 | expat | 2.6.4 | 2.6.4 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.bz2) |
