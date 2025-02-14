@@ -44,7 +44,6 @@ current_versions = {
     "sqlite": "3.49.0",
 }
 
-# 重试函数 (支持代理) - **修改：移除 retry 内部的打印**
 def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
     attempts = 0
     while attempts < max_retries:
@@ -54,14 +53,14 @@ def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
             return response
         except requests.exceptions.RequestException as e:
             attempts += 1
-            if attempts == max_retries: # 只在最终失败时才抛出异常，让外层循环的 except 块处理
+            if attempts == max_retries: 
                 raise e
             time.sleep(delay)
 
 # 获取最新版本的函数 (支持代理)
 def get_latest_version(program, proxies=None):
     if program == "zlib":
-        url = "https://api.github.com/repos/madler/zlib/releases/latest1"  # 故意使用错误的 URL 测试错误处理
+        url = "https://api.github.com/repos/madler/zlib/releases/latest1"
         response = retry(requests.get, url, proxies=proxies,program=program)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
@@ -69,7 +68,7 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "zstd":
-        url = "https://api.github.com/repos/facebook/zstd/releases/latest"
+        url = "https://api.github.com/repos/facebook/zstd/releases/latest1"
         response = retry(requests.get, url, proxies=proxies,program=program)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
@@ -243,19 +242,19 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "gnutls":
-        base_url = "https://www.gnupg.org/ftp/gcrypt/gnutls/" # 返回到基础 URL 以列出版本
+        base_url = "https://www.gnupg.org/ftp/gcrypt/gnutls/"
         response = retry(requests.get, base_url, proxies=proxies,program=program)
-        version_dir_matches = re.findall(r'href="v([\d.]+)"', response.text) # 再次查找版本目录
+        version_dir_matches = re.findall(r'href="v([\d.]+)"', response.text)
         if not version_dir_matches:
             return current_versions["gnutls"], f"https://www.gnupg.org/ftp/gcrypt/gnutls/gnutls-{current_versions['gnutls']}.tar.xz"
-        latest_version_dir = max(version_dir_matches, key=version.parse) # 获取最新的版本目录
-        version_url = base_url + f"v{latest_version_dir}/" # 构建最新的版本目录的 URL
-        version_response = retry(requests.get, version_url, proxies=proxies,program=program) # 获取最新的版本目录页面
-        matches = re.findall(r'href="gnutls-([\d.]+)\.tar\.xz"', version_response.text) # 在最新的版本目录中查找 tar.xz 文件
+        latest_version_dir = max(version_dir_matches, key=version.parse)
+        version_url = base_url + f"v{latest_version_dir}/"
+        version_response = retry(requests.get, version_url, proxies=proxies,program=program)
+        matches = re.findall(r'href="gnutls-([\d.]+)\.tar\.xz"', version_response.text)
         if not matches:
              return current_versions["gnutls"], f"https://www.gnupg.org/ftp/gcrypt/gnutls/gnutls-{current_versions['gnutls']}.tar.xz"
         latest_version = max(matches, key=version.parse) # Corrected max call with version.parse as key
-        download_url = f"https://www.gnupg.org/ftp/gcrypt/gnutls/v{latest_version_dir}/gnutls-{latest_version}.tar.xz" # 使用最新的版本目录构建正确的 URL
+        download_url = f"https://www.gnupg.org/ftp/gcrypt/gnutls/v{latest_version_dir}/gnutls-{latest_version}.tar.xz"
         return latest_version, download_url
 
     elif program == "nghttp2":
@@ -324,32 +323,22 @@ def get_latest_version(program, proxies=None):
 
 
     elif program == "sqlite":
-        # 获取最新版本号
         index_url = "https://www.sqlite.org/index.html"
         response = retry(requests.get, index_url, proxies=proxies)
         html = response.text
-        # 使用正则表达式提取版本号
         version_match = re.search(r'>Version ([0-9.]+)<', html)
         if not version_match:
             return None, None
         latest_version = version_match.group(1)
-
-        # 获取下载页面内容
         download_url = "https://www.sqlite.org/download.html"
         response = retry(requests.get, download_url, proxies=proxies)
         html = response.text
-
-        # 提取 CSV 数据部分
         csv_data = re.search(r'Download product data for scripts to read(.*?)-->', html, re.DOTALL)
         if not csv_data:
             return None, None
-
-        # 提取 autoconf 的 tar.gz 文件链接
         tarball_match = re.search(r'autoconf.*?\.tar\.gz', csv_data.group(1))
         if not tarball_match:
             return None, None
-
-        # 构建完整的下载链接
         tarball_url = tarball_match.group(0)
         download_url = f"https://www.sqlite.org/{tarball_url}"
         return latest_version, download_url
@@ -373,7 +362,6 @@ for program, current_version in current_versions.items():
             table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A |\n" # 添加错误状态到表格
             continue
 
-        # 判断是否有新版本
         if version.parse(latest_version) > version.parse(current_version):
             table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
@@ -385,11 +373,8 @@ for program, current_version in current_versions.items():
         error_messages.append(f"- {program} 获取最新版本失败: {e}") # 添加错误消息到列表
         table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A |\n" # 添加错误状态到表格
 
-
-# 打印带超链接的消息表格
 print(table)
 
-# 如果没有发现更新
 if not update_found:
     print("- 检测结束，所有程序都没有更新的版本")
 print("- ******检测结束******")
