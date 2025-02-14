@@ -60,7 +60,7 @@ def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
 # 获取最新版本的函数 (支持代理)
 def get_latest_version(program, proxies=None):
     if program == "zlib":
-        url = "https://api.github.com/repos/madler/zlib/releases/latest1"
+        url = "https://api.github.com/repos/madler/zlib/releases/latest"
         response = retry(requests.get, url, proxies=proxies,program=program)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
@@ -68,7 +68,7 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "zstd":
-        url = "https://api.github.com/repos/facebook/zstd/releases/latest1"
+        url = "https://api.github.com/repos/facebook/zstd/releases/latest"
         response = retry(requests.get, url, proxies=proxies,program=program)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
