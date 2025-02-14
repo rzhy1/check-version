@@ -65,7 +65,7 @@ def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):  # 添
 # 获取最新版本的函数 (支持代理)
 def get_latest_version(program, proxies=None):
     if program == "zlib":
-        url = "https://api.github.com/repos/madler/zlib/releases/latest"
+        url = "https://api.github.com/repos/madler/zlib/releases/latest1"
         response = retry(requests.get, url, proxies=proxies,program=program)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
@@ -377,7 +377,7 @@ for program, current_version in current_versions.items():
 
         # 判断是否有新版本      
         if version.parse(latest_version) > version.parse(current_version):
-            table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) |\n"
+            table += f"| {program} | {current_version} | {latest_version} | 🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
         else:
             # 修正点：闭合大括号并移除多余符号
