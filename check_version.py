@@ -383,8 +383,8 @@ for program, current_version in current_versions.items():
             # 修正点：闭合大括号并移除多余符号
             table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) |\n"
 
-        # 打印带超链接的消息
-        print(table)
+# 打印带超链接的消息
+print(table)
 
     except Exception as e:
         print(f"- {program} 获取最新版本失败: {e}")
