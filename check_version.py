@@ -349,7 +349,7 @@ def get_latest_version(program, proxies=None):
 
 # 检查更新
 update_found = False
-error_messages = [] # 初始化错误消息列表
+error_messages = []
 
 # 初始化表格头
 table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
@@ -358,20 +358,19 @@ for program, current_version in current_versions.items():
     try:
         latest_version, download_url = get_latest_version(program, proxies=proxies)
         if latest_version is None or download_url is None:  # SQLite check
-            error_messages.append(f"- {program}: 无法获取最新版本信息") # 添加错误消息到列表
-            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A |\n" # 添加错误状态到表格
+            error_messages.append(f"- {program}: 无法获取最新版本信息")
+            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A |\n"
             continue
 
         if version.parse(latest_version) > version.parse(current_version):
             table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
         else:
-            # 修正点：闭合大括号并移除多余符号
             table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) |\n"
 
     except Exception as e:
         error_messages.append(f"- {program} 获取最新版本失败: {e}") # 添加错误消息到列表
-        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A |\n" # 添加错误状态到表格
+        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A |\n"
 
 print(table)
 
