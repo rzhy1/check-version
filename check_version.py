@@ -385,12 +385,6 @@ for program, current_version in current_versions.items():
         error_messages.append(f"- {program} 获取最新版本失败: {e}") # 添加错误消息到列表
         table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A |\n" # 添加错误状态到表格
 
-# 先打印所有错误消息
-if error_messages:
-    print("--- 错误信息 ---")
-    for msg in error_messages:
-        print(msg)
-    print("---")
 
 # 打印带超链接的消息表格
 print(table)
