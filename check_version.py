@@ -373,6 +373,7 @@ for program, current_version in current_versions.items():
         latest_version, download_url = get_latest_version(program, proxies=proxies)
         if latest_version is None or download_url is None:  # SQLite check
             print(f"- {program}: 无法获取最新版本信息")
+            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A |\n" # 添加错误状态到表格
             continue
 
         # 判断是否有新版本      
