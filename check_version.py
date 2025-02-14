@@ -44,8 +44,8 @@ current_versions = {
     "sqlite": "3.49.0",
 }
 
-# 重试函数 (支持代理)
-def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):  # 添加 program 参数
+# 重试函数 (支持代理) - **修改：移除 retry 内部的打印**
+def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
     attempts = 0
     while attempts < max_retries:
         try:
@@ -54,18 +54,14 @@ def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):  # 添
             return response
         except requests.exceptions.RequestException as e:
             attempts += 1
-            if program:  # 如果提供了 program，则在日志中使用
-                print(f"- {program} 请求失败，重试中 ({attempts}/{max_retries})...: {e}")
-            else:
-                print(f"- 请求失败，重试中 ({attempts}/{max_retries})...: {e}")  # 否则使用通用消息
-            if attempts == max_retries:
+            if attempts == max_retries: # 只在最终失败时才抛出异常，让外层循环的 except 块处理
                 raise e
             time.sleep(delay)
 
 # 获取最新版本的函数 (支持代理)
 def get_latest_version(program, proxies=None):
     if program == "zlib":
-        url = "https://api.github.com/repos/madler/zlib/releases/latest1"
+        url = "https://api.github.com/repos/madler/zlib/releases/latest1"  # 故意使用错误的 URL 测试错误处理
         response = retry(requests.get, url, proxies=proxies,program=program)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
@@ -143,8 +139,8 @@ def get_latest_version(program, proxies=None):
         matches = re.findall(r'href="nettle-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://ftp.gnu.org/gnu/nettle/nettle-{latest_version}.tar.gz" # Correct URL - using latest_version
-        return latest_version, download_url   
-        
+        return latest_version, download_url
+
 
     elif program == "libtasn1":
         url = "https://ftp.gnu.org/gnu/libtasn1/"
@@ -261,7 +257,7 @@ def get_latest_version(program, proxies=None):
         latest_version = max(matches, key=version.parse) # Corrected max call with version.parse as key
         download_url = f"https://www.gnupg.org/ftp/gcrypt/gnutls/v{latest_version_dir}/gnutls-{latest_version}.tar.xz" # 使用最新的版本目录构建正确的 URL
         return latest_version, download_url
-    
+
     elif program == "nghttp2":
         url = "https://api.github.com/repos/nghttp2/nghttp2/releases/latest"
         response = retry(requests.get, url, proxies=proxies,program=program)
@@ -273,7 +269,7 @@ def get_latest_version(program, proxies=None):
                 return latest_version, download_url
         download_url = data["assets"][0]["browser_download_url"] # Fallback
         return latest_version, download_url
-        
+
 
     elif program == "libmicrohttpd":
         url = "https://ftp.gnu.org/gnu/libmicrohttpd/"
@@ -314,7 +310,7 @@ def get_latest_version(program, proxies=None):
         download_url = f"{base_url}{latest_main}/{latest_file[0]}"
         latest_version = latest_file[1]
         return latest_version, download_url
-    
+
     elif program == "xz":
         url = "https://sourceforge.net/projects/lzmautils/files/"
         response = retry(requests.get, url, program=program, proxies=proxies)
@@ -364,6 +360,7 @@ def get_latest_version(program, proxies=None):
 
 # 检查更新
 update_found = False
+error_messages = [] # 初始化错误消息列表
 
 # 初始化表格头
 table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
@@ -372,23 +369,30 @@ for program, current_version in current_versions.items():
     try:
         latest_version, download_url = get_latest_version(program, proxies=proxies)
         if latest_version is None or download_url is None:  # SQLite check
-            print(f"- {program}: 无法获取最新版本信息")
+            error_messages.append(f"- {program}: 无法获取最新版本信息") # 添加错误消息到列表
             table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A |\n" # 添加错误状态到表格
             continue
 
-        # 判断是否有新版本      
+        # 判断是否有新版本
         if version.parse(latest_version) > version.parse(current_version):
             table += f"| {program} | {current_version} | {latest_version} | 🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
         else:
             # 修正点：闭合大括号并移除多余符号
             table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) |\n"
-            
+
     except Exception as e:
-        print(f"- {program} 获取最新版本失败: {e}")
+        error_messages.append(f"- {program} 获取最新版本失败: {e}") # 添加错误消息到列表
         table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A |\n" # 添加错误状态到表格
 
-# 打印带超链接的消息
+# 先打印所有错误消息
+if error_messages:
+    print("--- 错误信息 ---")
+    for msg in error_messages:
+        print(msg)
+    print("---")
+
+# 打印带超链接的消息表格
 print(table)
 
 # 如果没有发现更新
