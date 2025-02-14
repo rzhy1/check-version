@@ -1,7 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-14 15:33:39 CST+0800</span></b> ###
---- 错误信息 ---
-- zlib 获取最新版本失败: 404 Client Error: Not Found for url: https://api.github.com/repos/madler/zlib/releases/latest1
----
+### <b><span style="color:black">最新更新时间: 2025-02-14 15:34:59 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |
 | --- | --- | --- | --- | --- |
 | zlib | 1.3.1 | N/A | ❌ 获取版本失败 | N/A |
