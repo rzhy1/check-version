@@ -44,6 +44,9 @@ current_versions = {
     "sqlite": "3.49.0",
 }
 
+# 初始化表格头
+table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
+
 # 重试函数 (支持代理)
 def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):  # 添加 program 参数
     attempts = 0
@@ -365,7 +368,6 @@ def get_latest_version(program, proxies=None):
 # 检查更新
 update_found = False
 
-table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
 for program, current_version in current_versions.items():
     try:
         latest_version, download_url = get_latest_version(program, proxies=proxies)
@@ -373,17 +375,13 @@ for program, current_version in current_versions.items():
             print(f"- {program}: 无法获取最新版本信息")
             continue
 
-        # 判断是否有新版本
-        # 初始化表格头
-        
+        # 判断是否有新版本      
         if version.parse(latest_version) > version.parse(current_version):
             table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
         else:
             # 修正点：闭合大括号并移除多余符号
             table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) |\n"
-
-
 
         # 打印带超链接的消息
         print(table)
