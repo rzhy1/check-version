@@ -385,6 +385,7 @@ for program, current_version in current_versions.items():
             
     except Exception as e:
         print(f"- {program} 获取最新版本失败: {e}")
+        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A |\n" # 添加错误状态到表格
 
 # 打印带超链接的消息
 print(table)
