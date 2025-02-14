@@ -373,14 +373,18 @@ for program, current_version in current_versions.items():
             continue
 
         # 判断是否有新版本
+        # 初始化表格头
+        table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
+
         if version.parse(latest_version) > version.parse(current_version):
-            message = f"- 🔴🔴🔴 {program} | {current_version} | 有新版本 {latest_version} ([下载地址]({download_url}))"
+            table += f"| {program} | {current_version} | {latest_version} | 🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
         else:
-            message = f"- {program} | {current_version} | 已是最新版本 ([下载地址]({download_url}))"
+            table += f"| {program} | {current_version | {latest_version} | ✅ 最新版 | [下载链接]({download_url}) |\n"
+
 
         # 打印带超链接的消息
-        print(message)
+        print(table)
 
     except Exception as e:
         print(f"- {program} 获取最新版本失败: {e}")
