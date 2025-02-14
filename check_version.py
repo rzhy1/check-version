@@ -380,7 +380,9 @@ for program, current_version in current_versions.items():
             table += f"| {program} | {current_version} | {latest_version} | 🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
         else:
-            table += f"| {program} | {current_version | {latest_version} |已是最新版 | [下载链接]({download_url}) |\n"
+            # 修正点：闭合大括号并移除多余符号
+            table += f"| {program} | {current_version} | {latest_version} | ✅ 已是最新版 | [下载链接]({download_url}) |\n"
+
 
 
         # 打印带超链接的消息
