@@ -375,7 +375,7 @@ for program, current_version in current_versions.items():
 
         # 判断是否有新版本
         if version.parse(latest_version) > version.parse(current_version):
-            table += f"| {program} | {current_version} | {latest_version} | 🔴 需更新 | [下载链接]({download_url}) |\n"
+            table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) |\n"
             update_found = True
         else:
             # 修正点：闭合大括号并移除多余符号
