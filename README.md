@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-14 15:22:11 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-14 15:25:18 CST+0800</span></b> ###
 - zlib 请求失败，重试中 (1/5)...: 404 Client Error: Not Found for url: https://api.github.com/repos/madler/zlib/releases/latest1
 - zlib 请求失败，重试中 (2/5)...: 404 Client Error: Not Found for url: https://api.github.com/repos/madler/zlib/releases/latest1
 - zlib 请求失败，重试中 (3/5)...: 404 Client Error: Not Found for url: https://api.github.com/repos/madler/zlib/releases/latest1
@@ -7,6 +7,7 @@
 - zlib 获取最新版本失败: 404 Client Error: Not Found for url: https://api.github.com/repos/madler/zlib/releases/latest1
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |
 | --- | --- | --- | --- | --- |
+| zlib | 1.3.1 | N/A | ❌ 获取版本失败 | N/A |
 | zstd | 1.5.6 | 1.5.6 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz) |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz) |
 | isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) |
