@@ -46,10 +46,10 @@ current_versions = {
 
 # 定义程序应用环境的备注
 program_environments = {
-    "zlib": "通用库",
-    "zstd": "通用库/压缩",
-    "gmp": "数学库",
-    "isl": "数学库",
+    "zlib": "通用库-aria2c、aria2c0(xmake)、musl-cross",
+    "zstd": "通用库/压缩-wget2",
+    "gmp": "数学库-wget、wget2、aria2c、musl-cross",
+    "isl": "数学库-aria2c0",
     "mpfr": "数学库",
     "mpc": "数学库",
     "binutils": "编译工具链",
