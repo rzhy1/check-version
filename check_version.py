@@ -60,7 +60,7 @@ program_environments = {
     "gpg-error": "wget",
     "libassuan": "wget",
     "gpgme": "wget",
-    "c-ares": "wget、aria2c、aria2c0、aria2c1",
+    "c-ares": "wget、aria2c0、aria2c、aria2c1",
     "libiconv": "wget、wget2",
     "libidn2": "wget、wget2",
     "libpsl": "wget、wget2",
