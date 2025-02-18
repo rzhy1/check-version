@@ -46,13 +46,13 @@ current_versions = {
 
 # 定义程序应用环境的备注
 program_environments = {
-    "zlib": "aria2c、aria2c0(xmake)、musl-cross",
+    "zlib": "aria2c、aria2c0、musl-cross",
     "zstd": "wget2",
     "gmp": "wget、wget2、aria2c、musl-cross",
-    "isl": "aria2c0(xmake)",
-    "mpfr": "aria2c0(xmake)",
-    "mpc": "aria2c0(xmake)",
-    "binutils": "aria2c0(xmake)、musl-cross、mingw_w64",
+    "isl": "aria2c0",
+    "mpfr": "aria2c0",
+    "mpc": "aria2c0",
+    "binutils": "aria2c0、musl-cross、mingw_w64",
     "gcc": "musl-cross、mingw_w64",
     "nettle": "wget、wget2",
     "libtasn1": "wget、wget2",
@@ -60,7 +60,7 @@ program_environments = {
     "gpg-error": "wget",
     "libassuan": "wget",
     "gpgme": "wget",
-    "c-ares": "wget、aria2c、aria2c0(xmake)、aria2c1",
+    "c-ares": "wget、aria2c、aria2c0、aria2c1",
     "libiconv": "wget、wget2",
     "libidn2": "wget、wget2",
     "libpsl": "wget、wget2",
@@ -71,10 +71,10 @@ program_environments = {
     "nghttp2": "wget2",
     "libmicrohttpd": "wget2",
     "zlib-ng": "aria2c1",
-    "libssh2": "aria2c0(xmake)、aria2c、aria2c1",
+    "libssh2": "aria2c0、aria2c、aria2c1",
     "libxml2": "aria2c",
     "xz": "wget2、aria2c1",
-    "sqlite": "aria2c0(xmake)、aria2c、aria2c1",
+    "sqlite": "aria2c0、aria2c、aria2c1",
 }
 
 def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
