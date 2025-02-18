@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 
 # 配置代理 (根据需要修改)
 proxies = {
-"http": "http://127.0.0.1:7788",  # 示例，根据你的实际代理设置修改
-"https": "https://127.0.0.1:7788", # 示例
+"http": "http://127.0.0.1:7788",
+"https": "https://127.0.0.1:7788",
 }
 proxies = None  # 不使用代理
 
@@ -90,7 +90,6 @@ def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
                 raise e
             time.sleep(delay)
 
-# 获取最新版本的函数 (支持代理)
 def get_latest_version(program, proxies=None):
     if program == "zlib":
         url = "https://api.github.com/repos/madler/zlib/releases/latest"
@@ -380,30 +379,28 @@ def get_latest_version(program, proxies=None):
     else:
         raise ValueError(f"不支持的程序: {program}")
 
-# 检查更新
 update_found = False
 error_messages = []
 
-# 初始化表格头
-table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n" # 添加了 "备注" 列的表头
+table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n"
 
 for program, current_version in current_versions.items():
     try:
         latest_version, download_url = get_latest_version(program, proxies=proxies)
         if latest_version is None or download_url is None:  # SQLite check
             error_messages.append(f"- {program}: 无法获取最新版本信息")
-            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列，使用 get 方法设置默认值
+            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A | {program_environments.get(program, '通用')} |\n"
             continue
 
         if version.parse(latest_version) > version.parse(current_version):
-            table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列
+            table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n"
             update_found = True
         else:
-            table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列
+            table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n"
 
     except Exception as e:
-        error_messages.append(f"- {program} 获取最新版本失败: {e}") # 添加错误消息到列表
-        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列，使用 get 方法设置默认值
+        error_messages.append(f"- {program} 获取最新版本失败: {e}")
+        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A | {program_environments.get(program, '通用')} |\n"
 
 print(table)
 
