@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-18 21:34:15 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-18 21:36:33 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
@@ -15,7 +15,7 @@
 | gpg-error | 1.51 | 1.51 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.gz) | wget |
 | libassuan | 3.0.1 | 3.0.1 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2) | wget |
 | gpgme | 1.24.2 | 1.24.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.2.tar.bz2) | wget |
-| c-ares | 1.34.4 | 1.34.4 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz) | wget、aria2c、aria2c0、aria2c1 |
+| c-ares | 1.34.4 | 1.34.4 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
 | libiconv | 1.18 | 1.18 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz) | wget、wget2 |
 | libidn2 | 2.3.0 | 2.3.7 | 🔴🔴 需更新 | [下载链接](https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz) | wget、wget2 |
 | libpsl | 0.21.5 | 0.21.5 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz) | wget、wget2 |
