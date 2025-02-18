@@ -1,10 +1,10 @@
-### <b><span style="color:black">最新更新时间: 2025-02-18 20:49:30 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-18 21:02:35 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
-| zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | 通用库 |
-| zstd | 1.5.6 | 1.5.6 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz) | 通用库/压缩 |
-| gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz) | 数学库 |
-| isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | 数学库 |
+| zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | 通用库-aria2c、aria2c0(xmake)、musl-cross |
+| zstd | 1.5.6 | 1.5.6 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz) | 通用库/压缩-wget2 |
+| gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz) | 数学库-wget、wget2、aria2c、musl-cross |
+| isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | 数学库-aria2c0 |
 | mpfr | 4.2.1 | 4.2.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz) | 数学库 |
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz) | 数学库 |
 | binutils | 2.44 | 2.44 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz) | 编译工具链 |
