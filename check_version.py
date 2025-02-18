@@ -6,12 +6,12 @@ from bs4 import BeautifulSoup
 
 # 配置代理 (根据需要修改)
 proxies = {
-    "http": "http://127.0.0.1:7788",  # 示例，根据你的实际代理设置修改
-    "https": "https://127.0.0.1:7788", # 示例
+"http": "http://127.0.0.1:7788",  # 示例，根据你的实际代理设置修改
+"https": "https://127.0.0.1:7788", # 示例
 }
 proxies = None  # 不使用代理
 
-# 定义当前版本
+# 定义当前版本和应用环境
 current_versions = {
     "zlib": "1.3.1",
     "zstd": "1.5.6",
@@ -44,6 +44,39 @@ current_versions = {
     "sqlite": "3.49.0",
 }
 
+# 定义程序应用环境的备注
+program_environments = {
+    "zlib": "通用库",
+    "zstd": "通用库/压缩",
+    "gmp": "数学库",
+    "isl": "数学库",
+    "mpfr": "数学库",
+    "mpc": "数学库",
+    "binutils": "编译工具链",
+    "gcc": "C/C++编译器",
+    "nettle": "密码学库",
+    "libtasn1": "ASN.1库",
+    "libunistring": "Unicode库",
+    "gpg-error": "GnuPG",
+    "libassuan": "GnuPG",
+    "gpgme": "GnuPG",
+    "c-ares": "异步DNS库",
+    "libiconv": "字符编码转换",
+    "libidn2": "IDNA库",
+    "libpsl": "PSL库",
+    "pcre2": "正则表达式库",
+    "expat": "XML解析库",
+    "libmetalink": "Metalink库",
+    "gnutls": "TLS库",
+    "nghttp2": "HTTP/2库",
+    "libmicrohttpd": "轻量级HTTP服务器库",
+    "zlib-ng": "通用库/压缩",
+    "libssh2": "SSH库",
+    "libxml2": "XML库",
+    "xz": "压缩工具",
+    "sqlite": "数据库",
+}
+
 def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
     attempts = 0
     while attempts < max_retries:
@@ -53,7 +86,7 @@ def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
             return response
         except requests.exceptions.RequestException as e:
             attempts += 1
-            if attempts == max_retries: 
+            if attempts == max_retries:
                 raise e
             time.sleep(delay)
 
@@ -352,28 +385,28 @@ update_found = False
 error_messages = []
 
 # 初始化表格头
-table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 |\n| --- | --- | --- | --- | --- |\n"
+table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n" # 添加了 "备注" 列的表头
 
 for program, current_version in current_versions.items():
     try:
         latest_version, download_url = get_latest_version(program, proxies=proxies)
         if latest_version is None or download_url is None:  # SQLite check
             error_messages.append(f"- {program}: 无法获取最新版本信息")
-            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A |\n"
+            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列，使用 get 方法设置默认值
             continue
 
         if version.parse(latest_version) > version.parse(current_version):
-            table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) |\n"
+            table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列
             update_found = True
         else:
-            table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) |\n"
+            table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列
 
     except Exception as e:
         error_messages.append(f"- {program} 获取最新版本失败: {e}") # 添加错误消息到列表
-        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A |\n"
+        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A | {program_environments.get(program, '通用')} |\n" # 添加 "备注" 列，使用 get 方法设置默认值
 
 print(table)
 
 if not update_found:
     print("- 检测结束，所有程序都没有更新的版本")
-print("- ******检测结束******")
+print("- 检测结束")
