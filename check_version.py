@@ -25,7 +25,7 @@ current_versions = {
     "libtasn1": "4.20.0",
     "libunistring": "1.3",
     "gpg-error": "1.51",
-    "libassuan": "3.0.1",
+    "libassuan": "3.0.2",
     "gpgme": "1.24.2",
     "c-ares": "1.34.4",
     "libiconv": "1.18",
@@ -39,9 +39,9 @@ current_versions = {
     "libmicrohttpd": "1.0.1",
     "zlib-ng": "2.2.4",
     "libssh2": "1.11.1",
-    "libxml2": "2.13.5",
+    "libxml2": "2.13.6",
     "xz": "5.6.4",
-    "sqlite": "3.49.0",
+    "sqlite": "3.49.1",
 }
 
 # 定义程序应用环境的备注
