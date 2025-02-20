@@ -14,7 +14,7 @@ proxies = None  # 不使用代理
 # 定义当前版本和应用环境
 current_versions = {
     "zlib": "1.3.1",
-    "zstd": "1.5.6",
+    "zstd": "1.5.7",
     "gmp": "6.3.0",
     "isl": "0.27",
     "mpfr": "4.2.1",
