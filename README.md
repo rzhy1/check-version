@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-22 22:06:49 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-23 00:08:58 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
