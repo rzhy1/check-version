@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-02-26 18:15:47 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-02-26 20:19:30 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
@@ -28,7 +28,7 @@
 | zlib-ng | 2.2.4 | 2.2.4 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.2.4/zlib-ng-win-arm-compat.zip) | aria2c1 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
 | libxml2 | 2.13.6 | 2.13.6 | 已是最新版 | [下载链接](https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.6.tar.xz) | aria2c |
-| xz | 5.6.4 | 5.6.4 | 已是最新版 | [下载链接](https://sourceforge.net/projects/lzmautils/files/xz-5.6.4.tar.xz) | wget2、aria2c1 |
+| xz | 5.6.4 | N/A | ❌ 获取版本失败 | N/A | wget2、aria2c1 |
 | sqlite | 3.49.1 | 3.49.1 | 已是最新版 | [下载链接](https://www.sqlite.org/autoconf-3490100.tar.gz) | aria2c0、aria2c、aria2c1 |
 
 - 检测结束
