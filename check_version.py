@@ -35,7 +35,7 @@ current_versions = {
     "expat": "2.6.4",
     "libmetalink": "0.1.3",
     "gnutls": "3.8.9",
-    "nghttp2": "1.64.0",
+    "nghttp2": "1.65.0",
     "libmicrohttpd": "1.0.1",
     "zlib-ng": "2.2.4",
     "libssh2": "1.11.1",
