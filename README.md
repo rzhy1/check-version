@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-03-02 20:14:09 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-03-02 21:19:05 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
@@ -23,7 +23,7 @@
 | expat | 2.6.4 | 2.6.4 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.bz2) | wget、musl-cross、aria2c |
 | libmetalink | 0.1.3 | 0.1.3 | 已是最新版 | [下载链接](https://github.com/metalink-dev/libmetalink/releases/download/release-0.1.3/libmetalink-0.1.3.tar.bz2) | wget |
 | gnutls | 3.8.9 | 3.8.9 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz) | wget、wget2 |
-| nghttp2 | 1.64.0 | 1.65.0 | 🔴🔴 需更新 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.65.0/nghttp2-1.65.0.tar.gz) | wget2 |
+| nghttp2 | 1.65.0 | 1.65.0 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.65.0/nghttp2-1.65.0.tar.gz) | wget2 |
 | libmicrohttpd | 1.0.1 | 1.0.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.1.tar.gz) | wget2 |
 | zlib-ng | 2.2.4 | 2.2.4 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.2.4/zlib-ng-win-arm-compat.zip) | aria2c1 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
