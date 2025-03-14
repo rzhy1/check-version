@@ -32,7 +32,7 @@ current_versions = {
     "libidn2": "2.3.0",
     "libpsl": "0.21.5",
     "pcre2": "10.45",
-    "expat": "2.6.4",
+    "expat": "2.7.0",
     "libmetalink": "0.1.3",
     "gnutls": "3.8.9",
     "nghttp2": "1.65.0",
