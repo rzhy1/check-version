@@ -1,11 +1,11 @@
-### <b><span style="color:black">最新更新时间: 2025-03-21 16:12:27 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-03-21 17:40:00 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
 | isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | musl-cross |
-| mpfr | 4.2.1 | 4.2.2 | 🔴🔴 需更新 | [下载链接](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
+| mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
 | binutils | 2.44 | 2.44 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz) | musl-cross、mingw_w64 |
 | gcc | 14.2.0 | 14.2.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz) | musl-cross、mingw_w64 |
