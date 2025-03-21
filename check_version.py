@@ -17,7 +17,7 @@ current_versions = {
     "zstd": "1.5.7",
     "gmp": "6.3.0",
     "isl": "0.27",
-    "mpfr": "4.2.1",
+    "mpfr": "4.2.2",
     "mpc": "1.3.1",
     "binutils": "2.44",
     "gcc": "14.2.0",
