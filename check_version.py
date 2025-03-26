@@ -40,7 +40,7 @@ current_versions = {
     "zlib-ng": "2.2.4",
     "libssh2": "1.11.1",
     "libxml2": "2.13.6",
-    "xz": "5.6.4",
+    "xz": "5.8.0",
     "sqlite": "3.49.1",
 }
 
