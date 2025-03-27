@@ -72,7 +72,7 @@ program_environments = {
     "libmicrohttpd": "wget2",
     "zlib-ng": "aria2c1",
     "libssh2": "aria2c0、aria2c、aria2c1",
-    "libxml2": "aria2c",
+    "libxml2": "aria2c1",
     "xz": "wget2、aria2c1",
     "sqlite": "aria2c0、aria2c、aria2c1",
 }
