@@ -39,7 +39,7 @@ current_versions = {
     "libmicrohttpd": "1.0.1",
     "zlib-ng": "2.2.4",
     "libssh2": "1.11.1",
-    "libxml2": "2.13.6",
+    "libxml2": "2.13.7",
     "xz": "5.8.0",
     "sqlite": "3.49.1",
 }
