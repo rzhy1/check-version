@@ -382,9 +382,12 @@ def get_latest_version(program, proxies=None):
 update_found = False
 error_messages = []
 
+# 在生成表格的部分，修改为：
 table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n"
 
-for program, current_version in current_versions.items():
+# 按程序名排序后遍历
+for program in sorted(current_versions.keys()):
+    current_version = current_versions[program]
     try:
         latest_version, download_url = get_latest_version(program, proxies=proxies)
         if latest_version is None or download_url is None:  # SQLite check
