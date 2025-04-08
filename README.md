@@ -1,13 +1,13 @@
-### <b><span style="color:black">最新更新时间: 2025-04-08 20:17:59 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-04-08 20:35:27 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.44 | 2.44 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz) | musl-cross、mingw_w64 |
-| c-ares | 1.34.4 | 1.34.4 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
+| c-ares | 1.34.4 | 1.34.5 | 🔴🔴 需更新 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.5/c-ares-1.34.5.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
 | expat | 2.7.1 | 2.7.1 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_7_1/expat-2.7.1.tar.bz2) | wget、aria2c |
 | gcc | 14.2.0 | 14.2.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz) | musl-cross、mingw_w64 |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
 | gnutls | 3.8.9 | 3.8.9 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz) | wget、wget2 |
-| gpg-error | 1.51 | 1.52 | 🔴🔴 需更新 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.52.tar.gz) | wget |
+| gpg-error | 1.52 | 1.52 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.52.tar.gz) | wget |
 | gpgme | 1.24.2 | 1.24.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.2.tar.bz2) | wget |
 | isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | musl-cross |
 | libassuan | 3.0.2 | 3.0.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2) | wget |
