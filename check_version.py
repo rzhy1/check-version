@@ -19,7 +19,7 @@ current_versions = {
     "gcc": "14.2.0",
     "gmp": "6.3.0",
     "gnutls": "3.8.9",
-    "gpg-error": "1.51",
+    "gpg-error": "1.52",
     "gpgme": "1.24.2",
     "isl": "0.27",
     "libassuan": "3.0.2",
