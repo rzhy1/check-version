@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-04-17 22:09:28 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-04-17 22:56:31 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.44 | 2.44 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz) | musl-cross、mingw_w64 |
@@ -7,7 +7,7 @@
 | gcc | 14.2.0 | 14.2.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz) | musl-cross、mingw_w64 |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
 | gnutls | 3.8.9 | 3.8.9 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz) | wget、wget2 |
-| gpg-error | 1.53 | 1.54 | 🔴🔴 需更新 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.54.tar.gz) | wget |
+| gpg-error | 1.54 | 1.54 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.54.tar.gz) | wget |
 | gpgme | 1.24.2 | 1.24.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.2.tar.bz2) | wget |
 | isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | musl-cross |
 | libassuan | 3.0.2 | 3.0.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2) | wget |
@@ -19,7 +19,7 @@
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
 | libtasn1 | 4.20.0 | 4.20.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz) | wget、wget2 |
 | libunistring | 1.3 | 1.3 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.gz) | wget、wget2 |
-| libxml2 | 2.14.1 | 2.14.2 | 🔴🔴 需更新 | [下载链接](https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.2.tar.xz) | aria2c1 |
+| libxml2 | 2.14.2 | 2.14.2 | 已是最新版 | [下载链接](https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.2.tar.xz) | aria2c1 |
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 3.10.1 | 3.10.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/nettle/nettle-3.10.1.tar.gz) | wget、wget2 |
