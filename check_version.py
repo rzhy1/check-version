@@ -16,7 +16,7 @@ current_versions = {
     "binutils": "2.44",
     "c-ares": "1.34.5",
     "expat": "2.7.1",
-    "gcc": "14.2.0",
+    "gcc": "15.1.0",
     "gmp": "6.3.0",
     "gnutls": "3.8.9",
     "gpg-error": "1.55",
