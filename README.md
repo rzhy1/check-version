@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-05-11 08:52:13 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-05-11 11:09:34 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.44 | 2.44 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz) | musl-cross、mingw_w64 |
@@ -13,9 +13,9 @@
 | libassuan | 3.0.2 | 3.0.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2) | wget |
 | libiconv | 1.18 | 1.18 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz) | wget、wget2 |
 | libidn2 | 2.3.0 | 2.3.8 | 🔴🔴 需更新 | [下载链接](https://ftp.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz) | wget、wget2 |
-| libmetalink | 0.1.3 | 0.1.3 | 已是最新版 | [下载链接](https://github.com/metalink-dev/libmetalink/releases/download/release-0.1.3/libmetalink-0.1.3.tar.bz2) | wget |
+| libmetalink | 0.1.3 | N/A | ❌ 获取版本失败 | N/A | wget |
 | libmicrohttpd | 1.0.1 | 1.0.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.1.tar.gz) | wget2 |
-| libpsl | 0.21.5 | 0.21.5 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz) | wget、wget2 |
+| libpsl | 0.21.5 | N/A | ❌ 获取版本失败 | N/A | wget、wget2 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
 | libtasn1 | 4.20.0 | 4.20.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz) | wget、wget2 |
 | libunistring | 1.3 | 1.3 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.gz) | wget、wget2 |
@@ -23,8 +23,8 @@
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 3.10.1 | 3.10.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/nettle/nettle-3.10.1.tar.gz) | wget、wget2 |
-| nghttp2 | 1.65.0 | 1.65.0 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.65.0/nghttp2-1.65.0.tar.gz) | wget2 |
-| pcre2 | 10.45 | 10.45 | 已是最新版 | [下载链接](https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2) | wget、wget2 |
+| nghttp2 | 1.65.0 | N/A | ❌ 获取版本失败 | N/A | wget2 |
+| pcre2 | 10.45 | N/A | ❌ 获取版本失败 | N/A | wget、wget2 |
 | sqlite | 3.49.1 | 3.49.2 | 🔴🔴 需更新 | [下载链接](https://www.sqlite.org/autoconf-3490200.tar.gz) | aria2c0、aria2c、aria2c1 |
 | xz | 5.8.1 | 5.8.1 | 已是最新版 | [下载链接](https://sourceforge.net/projects/lzmautils/files/xz-5.8.1.tar.xz) | wget2、aria2c1 |
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
