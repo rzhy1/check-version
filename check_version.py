@@ -355,56 +355,37 @@ def get_latest_version(program, proxies=None):
 
 
     elif program == "sqlite":
-        # 方法1：直接从变更日志页面获取最新版本
-        changelog_url = "https://www.sqlite.org/changes.html"
-        response = retry(requests.get, changelog_url, proxies=proxies)
-        html = response.text
-    
-        # 提取最新版本号（格式：3.xx.x）
-        version_match = re.search(r'<h2>\s*Version\s+([\d.]+)\s+</h2>', html)
-        if version_match:
-            latest_version = version_match.group(1)
-        else:
-            # 备用方法：从下载页面提取
-            download_page_url = "https://www.sqlite.org/download.html"
-            response = retry(requests.get, download_page_url, proxies=proxies)
-            html = response.text
-            version_match = re.search(r'<h2>Download SQLite ([\d.]+)</h2>', html)
-            if not version_match:
-                return None, None
-            latest_version = version_match.group(1)
-    
-        # 获取下载链接（使用预定义的URL模式）
-        year = datetime.datetime.now().year
-        # 尝试当前年和前一年（考虑年末/年初情况）
-        for y in [year, year-1]:
-            # 构建可能的下载URL格式
-            version_num = latest_version.replace('.', '')
-            version_num = version_num.ljust(7, '0')  # 确保7位数字
-            possible_url = f"https://www.sqlite.org/{y}/sqlite-autoconf-{version_num}.tar.gz"
-        
-            # 检查URL是否有效
-            try:
-                head_response = retry(requests.head, possible_url, proxies=proxies, allow_redirects=True)
-                if head_response.status_code == 200:
-                    return latest_version, possible_url
-            except:
-                continue
-    
-        # 如果预构建URL无效，尝试解析下载页面
+        # 直接访问下载页面，因为我们需要的所有信息都在这里
         download_page_url = "https://www.sqlite.org/download.html"
         response = retry(requests.get, download_page_url, proxies=proxies)
         html = response.text
-    
-        # 查找所有可能的下载链接
-        tarball_matches = re.findall(r'href="(\d{4}/sqlite-autoconf-\d+\.tar\.gz)"', html)
-        if tarball_matches:
-            # 选择最新年份的链接
-            tarball_url = sorted(tarball_matches, reverse=True)[0]
-            download_url = f"https://www.sqlite.org/{tarball_url}"
-            return latest_version, download_url
-    
-        return None, None
+
+        # 匹配模式解释：
+        # ^(\d{4})-\d{2}-\d{2},       -> 匹配行首的日期，并捕获年份（Group 1）
+        # ([0-9.]+),                  -> 匹配版本号（如 3.46.0），并捕获（Group 2）
+        # (sqlite-autoconf-[0-9]+\.tar\.gz) -> 匹配特定文件名，并捕获（Group 3）
+        # re.MULTILINE 允许 ^ 匹配每行的开头，以便在多行文本中找到正确的行
+        tarball_info_match = re.search(
+            r'^(\d{4})-\d{2}-\d{2},'         # Group 1: Year
+            r'([0-9.]+),'                   # Group 2: Version
+            r'(sqlite-autoconf-[0-9]+\.tar\.gz)', # Group 3: Filename
+            html,
+            re.MULTILINE
+        )
+
+        if not tarball_info_match:
+            # 如果没有找到匹配项，返回 None, None
+            return None, None
+
+        year = tarball_info_match.group(1)
+        latest_version = tarball_info_match.group(2)
+        filename = tarball_info_match.group(3)
+
+        # 拼接正确的下载URL
+        # 示例：https://www.sqlite.org/2025/sqlite-autoconf-3500000.tar.gz
+        final_download_url = f"https://www.sqlite.org/{year}/{filename}"
+
+        return latest_version, final_download_url
 
 
     else:
