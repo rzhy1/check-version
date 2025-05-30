@@ -362,17 +362,17 @@ def get_latest_version(program, proxies=None):
         if not version_match:
             return None, None
         latest_version = version_match.group(1)
-        download_url = "https://www.sqlite.org/download.html"
-        response = retry(requests.get, download_url, proxies=proxies)
+        download_page_url = "https://www.sqlite.org/download.html"
+        response = retry(requests.get, download_page_url, proxies=proxies)
         html = response.text
-        csv_data = re.search(r'Download product data for scripts to read(.*?)-->', html, re.DOTALL)
-        if not csv_data:
-            return None, None
-        tarball_match = re.search(r'autoconf.*?\.tar\.gz', csv_data.group(1))
+        tarball_match = re.search(
+            r'<a href="((?:19|20)\d{2}/sqlite-autoconf-\d{7}\.tar\.gz)">',
+            html
+        )
+    
         if not tarball_match:
             return None, None
-        tarball_url = tarball_match.group(0)
-        download_url = f"https://www.sqlite.org/{tarball_url}"
+        download_url = f"https://www.sqlite.org/{tarball_match.group(1)}"
         return latest_version, download_url
 
 
