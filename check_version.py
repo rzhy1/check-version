@@ -355,24 +355,31 @@ def get_latest_version(program, proxies=None):
 
 
     elif program == "sqlite":
-        index_url = "https://www.sqlite.org/index.html"
-        response = retry(requests.get, index_url, proxies=proxies)
-        html = response.text
-        version_match = re.search(r'>Version ([0-9.]+)<', html)
-        if not version_match:
-            return None, None
-        latest_version = version_match.group(1)
+        # 获取最新版本号 - 直接从下载页面提取
         download_page_url = "https://www.sqlite.org/download.html"
         response = retry(requests.get, download_page_url, proxies=proxies)
         html = response.text
-        tarball_match = re.search(
-            r'<a href="((?:19|20)\d{2}/sqlite-autoconf-\d{7}\.tar\.gz)">',
-            html
-        )
     
-        if not tarball_match:
-            return None, None
-        download_url = f"https://www.sqlite.org/{tarball_match.group(1)}"
+        # 同时提取版本号和下载地址（更可靠的方法）
+        # 匹配格式：<h3>2025-xx-xx (3.xx.x)</h3> 下方的下载链接
+        pattern = r'<h3>\d{4}-\d{2}-\d{2}\s+\(([\d.]+)\)</h3>.*?<a href="(\d{4}/sqlite-autoconf-\d+\.tar\.gz)">'
+        match = re.search(pattern, html, re.DOTALL)
+    
+        if not match:
+            # 备用方法：分开提取版本和下载链接
+            version_match = re.search(r'>SQLite version ([\d.]+) <', html)
+            tarball_match = re.search(r'<a href="(\d{4}/sqlite-autoconf-\d+\.tar\.gz)">', html)
+        
+            if not version_match or not tarball_match:
+                return None, None
+            
+            latest_version = version_match.group(1)
+            download_url = f"https://www.sqlite.org/{tarball_match.group(1)}"
+            return latest_version, download_url
+    
+        # 主方法匹配成功
+        latest_version = match.group(1)
+        download_url = f"https://www.sqlite.org/{match.group(2)}"
         return latest_version, download_url
 
 
