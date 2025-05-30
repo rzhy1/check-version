@@ -363,7 +363,7 @@ def get_latest_version(program, proxies=None):
         # 提取最新版本号（格式：3.xx.x）
         version_match = re.search(r'<h2>\s*Version\s+([\d.]+)\s+</h2>', html)
         if version_match:
-        latest_version = version_match.group(1)
+            latest_version = version_match.group(1)
         else:
             # 备用方法：从下载页面提取
             download_page_url = "https://www.sqlite.org/download.html"
@@ -379,12 +379,17 @@ def get_latest_version(program, proxies=None):
         # 尝试当前年和前一年（考虑年末/年初情况）
         for y in [year, year-1]:
             # 构建可能的下载URL格式
-            possible_url = f"https://www.sqlite.org/{y}/sqlite-autoconf-{latest_version.replace('.', '')}0000.tar.gz"
+            version_num = latest_version.replace('.', '')
+            version_num = version_num.ljust(7, '0')  # 确保7位数字
+            possible_url = f"https://www.sqlite.org/{y}/sqlite-autoconf-{version_num}.tar.gz"
         
             # 检查URL是否有效
-            head_response = retry(requests.head, possible_url, proxies=proxies, allow_redirects=True)
-            if head_response.status_code == 200:
-                return latest_version, possible_url
+            try:
+                head_response = retry(requests.head, possible_url, proxies=proxies, allow_redirects=True)
+                if head_response.status_code == 200:
+                    return latest_version, possible_url
+            except:
+                continue
     
         # 如果预构建URL无效，尝试解析下载页面
         download_page_url = "https://www.sqlite.org/download.html"
