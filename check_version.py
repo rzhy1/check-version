@@ -355,37 +355,25 @@ def get_latest_version(program, proxies=None):
 
 
     elif program == "sqlite":
-        # 直接访问下载页面，因为我们需要的所有信息都在这里
-        download_page_url = "https://www.sqlite.org/download.html"
-        response = retry(requests.get, download_page_url, proxies=proxies)
+        index_url = "https://www.sqlite.org/index.html"
+        response = retry(requests.get, index_url, proxies=proxies)
         html = response.text
-
-        # 匹配模式解释：
-        # ^(\d{4})-\d{2}-\d{2},       -> 匹配行首的日期，并捕获年份（Group 1）
-        # ([0-9.]+),                  -> 匹配版本号（如 3.46.0），并捕获（Group 2）
-        # (sqlite-autoconf-[0-9]+\.tar\.gz) -> 匹配特定文件名，并捕获（Group 3）
-        # re.MULTILINE 允许 ^ 匹配每行的开头，以便在多行文本中找到正确的行
-        tarball_info_match = re.search(
-            r'^(\d{4})-\d{2}-\d{2},'         # Group 1: Year
-            r'([0-9.]+),'                   # Group 2: Version
-            r'(sqlite-autoconf-[0-9]+\.tar\.gz)', # Group 3: Filename
-            html,
-            re.MULTILINE
-        )
-
-        if not tarball_info_match:
-            # 如果没有找到匹配项，返回 None, None
+        version_match = re.search(r'>Version ([0-9.]+)<', html)
+        if not version_match:
             return None, None
-
-        year = tarball_info_match.group(1)
-        latest_version = tarball_info_match.group(2)
-        filename = tarball_info_match.group(3)
-
-        # 拼接正确的下载URL
-        # 示例：https://www.sqlite.org/2025/sqlite-autoconf-3500000.tar.gz
-        final_download_url = f"https://www.sqlite.org/{year}/{filename}"
-
-        return latest_version, final_download_url
+        latest_version = version_match.group(1)
+        download_url = "https://www.sqlite.org/download.html"
+        response = retry(requests.get, download_url, proxies=proxies)
+        html = response.text
+        csv_data = re.search(r'Download product data for scripts to read(.*?)-->', html, re.DOTALL)
+        if not csv_data:
+            return None, None
+        tarball_match = re.search(r'autoconf.*?\.tar\.gz', csv_data.group(1))
+        if not tarball_match:
+            return None, None
+        tarball_url = tarball_match.group(0)
+        download_url = f"https://www.sqlite.org/{tarball_url}"
+        return latest_version, download_url
 
 
     else:
