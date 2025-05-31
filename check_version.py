@@ -362,12 +362,9 @@ def get_latest_version(program, proxies=None):
         if not version_match:
             return None, None
         latest_version = version_match.group(1)
-    
         download_url = "https://www.sqlite.org/download.html"
         response = retry(requests.get, download_url, proxies=proxies)
         html = response.text
-    
-        # 直接从CSV数据块获取完整路径
         csv_block = re.search(
             r'Download product data for scripts to read(.*?)-->', 
             html, 
@@ -375,7 +372,6 @@ def get_latest_version(program, proxies=None):
         )
         if csv_block:
             csv_data = csv_block.group(1)
-            # 查找autoconf的tar.gz文件路径
             tarball_match = re.search(
                 r'PRODUCT,[^,]*,\s*([^,]+sqlite-autoconf[^,]+\.tar\.gz)', 
                 csv_data
@@ -384,7 +380,6 @@ def get_latest_version(program, proxies=None):
                 relative_path = tarball_match.group(1).strip()
                 download_url = f"https://www.sqlite.org/{relative_path}"
                 return latest_version, download_url
-    
         return None, None
 
 
