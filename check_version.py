@@ -20,7 +20,7 @@ current_versions = {
     "gmp": "6.3.0",
     "gnutls": "3.8.9",
     "gpg-error": "1.55",
-    "gpgme": "1.24.3",
+    "gpgme": "2.0.0",
     "isl": "0.27",
     "libassuan": "3.0.2",
     "libiconv": "1.18",
