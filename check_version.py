@@ -35,7 +35,7 @@ current_versions = {
     "mpc": "1.3.1",
     "mpfr": "4.2.2",
     "nettle": "3.10.1",
-    "nghttp2": "1.65.0",
+    "nghttp2": "1.66.0",
     "pcre2": "10.45",
     "sqlite": "3.50.1",
     "xz": "5.8.1",
