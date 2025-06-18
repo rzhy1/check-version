@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-06-18 06:09:36 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-06-18 08:39:06 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.44 | 2.44 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz) | musl-cross、mingw_w64 |
@@ -23,7 +23,7 @@
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 3.10.1 | 3.10.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/nettle/nettle-3.10.1.tar.gz) | wget、wget2 |
-| nghttp2 | 1.65.0 | 1.66.0 | 🔴🔴 需更新 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.66.0/nghttp2-1.66.0.tar.gz) | wget2 |
+| nghttp2 | 1.66.0 | 1.66.0 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.66.0/nghttp2-1.66.0.tar.gz) | wget2 |
 | pcre2 | 10.45 | 10.45 | 已是最新版 | [下载链接](https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2) | wget、wget2 |
 | sqlite | 3.50.1 | 3.50.1 | 已是最新版 | [下载链接](https://www.sqlite.org/2025/sqlite-autoconf-3500100.tar.gz) | aria2c0、aria2c、aria2c1 |
 | xz | 5.8.1 | 5.8.1 | 已是最新版 | [下载链接](https://sourceforge.net/projects/lzmautils/files/xz-5.8.1.tar.xz) | wget2、aria2c1 |
