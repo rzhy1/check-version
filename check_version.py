@@ -34,7 +34,7 @@ current_versions = {
     "libxml2": "2.14.4",
     "mpc": "1.3.1",
     "mpfr": "4.2.2",
-    "nettle": "3.10.1",
+    "nettle": "3.10.2",
     "nghttp2": "1.66.0",
     "pcre2": "10.45",
     "sqlite": "3.50.1",
