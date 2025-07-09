@@ -18,7 +18,7 @@ current_versions = {
     "expat": "2.7.1",
     "gcc": "15.1.0",
     "gmp": "6.3.0",
-    "gnutls": "3.8.9",
+    "gnutls": "3.8.10",
     "gpg-error": "1.55",
     "gpgme": "2.0.0",
     "isl": "0.27",
