@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-07-15 21:10:00 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-07-15 22:12:13 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.44 | 2.44 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz) | musl-cross、mingw_w64 |
@@ -19,7 +19,7 @@
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
 | libtasn1 | 4.20.0 | 4.20.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz) | wget、wget2 |
 | libunistring | 1.3 | 1.3 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.gz) | wget、wget2 |
-| libxml2 | 2.14.4 | 2.14.4 | 已是最新版 | [下载链接](https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.4.tar.xz) | aria2c1 |
+| libxml2 | 2.14.4 | 2.14.5 | 🔴🔴 需更新 | [下载链接](https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.5.tar.xz) | aria2c1 |
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 3.10.2 | 3.10.2 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/nettle/nettle-3.10.2.tar.gz) | wget、wget2 |
