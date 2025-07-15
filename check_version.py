@@ -26,7 +26,7 @@ current_versions = {
     "libiconv": "1.18",
     "libidn2": "2.3.0",
     "libmetalink": "0.1.3",
-    "libmicrohttpd": "1.0.1",
+    "libmicrohttpd": "1.0.2",
     "libpsl": "0.21.5",
     "libssh2": "1.11.1",
     "libtasn1": "4.20.0",
