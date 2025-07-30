@@ -24,7 +24,7 @@ current_versions = {
     "isl": "0.27",
     "libassuan": "3.0.2",
     "libiconv": "1.18",
-    "libidn2": "2.3.0",
+    "libidn2": "2.3.8",
     "libmetalink": "0.1.3",
     "libmicrohttpd": "1.0.2",
     "libpsl": "0.21.5",
