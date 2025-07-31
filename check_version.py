@@ -37,7 +37,7 @@ current_versions = {
     "nettle": "3.10.2",
     "nghttp2": "1.66.0",
     "pcre2": "10.45",
-    "sqlite": "3.50.3",
+    "sqlite": "3.50.4",
     "xz": "5.8.1",
     "zlib": "1.3.1",
     "zlib-ng": "2.2.4",
