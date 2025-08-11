@@ -16,7 +16,7 @@ current_versions = {
     "binutils": "2.45",
     "c-ares": "1.34.5",
     "expat": "2.7.1",
-    "gcc": "15.1.0",
+    "gcc": "15.2.0",
     "gmp": "6.3.0",
     "gnutls": "3.8.10",
     "gpg-error": "1.55",
@@ -40,7 +40,7 @@ current_versions = {
     "sqlite": "3.50.4",
     "xz": "5.8.1",
     "zlib": "1.3.1",
-    "zlib-ng": "2.2.4",
+    "zlib-ng": "2.2.5",
     "zstd": "1.5.7",
 }
 
