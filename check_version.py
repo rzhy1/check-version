@@ -36,6 +36,7 @@ current_versions = {
     "mpfr": "4.2.2",
     "nettle": "3.10.2",
     "nghttp2": "1.66.0",
+    "openssl": "3.5.1",
     "pcre2": "10.45",
     "sqlite": "3.50.4",
     "xz": "5.8.1",
@@ -69,6 +70,7 @@ program_environments = {
     "mpfr": "musl-cross",
     "nettle": "wget、wget2",
     "nghttp2": "wget2",
+    "openssl":"wget",
     "pcre2": "wget、wget2",
     "sqlite": "aria2c0、aria2c、aria2c1",
     "xz": "wget2、aria2c1",
@@ -263,6 +265,21 @@ def get_latest_version(program, proxies=None):
         data = response.json()
         latest_version = data["tag_name"].lstrip("R_").replace('_', '.')
         download_url = data["assets"][0]["browser_download_url"]
+        return latest_version, download_url
+        
+    elif program == "openssl":
+        url = "https://api.github.com/repos/openssl/openssl/releases/latest"
+        response = retry(requests.get, url, proxies=proxies, program=program)
+        data = response.json()
+        tag_name = data["tag_name"]
+        latest_version = tag_name.lstrip("openssl-")
+        download_url = None
+        for asset in data["assets"]:
+            if asset["name"].endswith(".tar.gz"):
+                download_url = asset["browser_download_url"]
+                break 
+        if not download_url:
+            raise ValueError("Could not find the .tar.gz source archive in OpenSSL release assets.")
         return latest_version, download_url
 
     elif program == "libmetalink":
