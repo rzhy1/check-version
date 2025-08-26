@@ -2,7 +2,7 @@ import requests
 import re
 from packaging import version
 import time
-from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 proxies = None  # 不使用代理
 
@@ -12,7 +12,7 @@ current_versions = {
     "c-ares": "1.34.5",
     "expat": "2.7.1",
     "gcc": "15.2.0",
-    "gettext-tools": "0.26",
+    "gettext-tools-windows": "0.25",
     "gmp": "6.3.0",
     "gnutls": "3.8.10",
     "gpg-error": "1.55",
@@ -47,7 +47,7 @@ program_environments = {
     "c-ares": "wget、aria2c0、aria2c、aria2c1",
     "expat": "wget、aria2c",
     "gcc": "musl-cross、mingw_w64",
-    "gettext-tools": "aria2c0",
+    "gettext-tools-windows": "aria2c0",
     "gmp": "wget、wget2、aria2c、musl-cross",
     "gnutls": "wget、wget2",
     "gpg-error": "wget",
@@ -224,7 +224,7 @@ def get_latest_version(program, proxies=None):
         download_url = data["assets"][0]["browser_download_url"]
         return latest_version, download_url
         
-    elif program == "gettext-tools":
+    elif program == "gettext-tools-windows":
         url = "https://api.github.com/repos/vslavik/gettext-tools-windows/releases/latest"
         response = retry(requests.get, url, proxies=proxies,program=program)
         data = response.json()
@@ -412,34 +412,47 @@ def get_latest_version(program, proxies=None):
     else:
         raise ValueError(f"不支持的程序: {program}")
 
-update_found = False
-error_messages = []
-
-# 在生成表格的部分，修改为：
-table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n"
-
-# 按程序名排序后遍历
-for program in sorted(current_versions.keys()):
+def fetch_program(program):
     current_version = current_versions[program]
     try:
         latest_version, download_url = get_latest_version(program, proxies=proxies)
-        if latest_version is None or download_url is None:  # SQLite check
-            error_messages.append(f"- {program}: 无法获取最新版本信息")
-            table += f"| {program} | {current_version} | N/A | ⚠️ 获取版本信息失败 | N/A | {program_environments.get(program, '通用')} |\n"
-            continue
-
+        if latest_version is None or download_url is None:
+            return program, current_version, None, None, "⚠️ 获取版本信息失败"
         if version.parse(latest_version) > version.parse(current_version):
-            table += f"| {program} | {current_version} | {latest_version} | 🔴🔴 需更新 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n"
-            update_found = True
+            return program, current_version, latest_version, download_url, "🔴🔴 需更新"
         else:
-            table += f"| {program} | {current_version} | {latest_version} | 已是最新版 | [下载链接]({download_url}) | {program_environments.get(program, '通用')} |\n"
-
+            return program, current_version, latest_version, download_url, "已是最新版"
     except Exception as e:
-        error_messages.append(f"- {program} 获取最新版本失败: {e}")
-        table += f"| {program} | {current_version} | N/A | ❌ 获取版本失败 | N/A | {program_environments.get(program, '通用')} |\n"
+        return program, current_version, None, None, f"❌ 获取版本失败: {e}"
+
+# ==========================
+# 主调度 - 并发执行
+# ==========================
+update_found = False
+table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n"
+
+results = []
+
+with ThreadPoolExecutor(max_workers=10) as executor:
+    futures = {executor.submit(fetch_program, prog): prog for prog in current_versions.keys()}
+    for future in as_completed(futures):
+        results.append(future.result())
+
+# 按程序名字母顺序排序
+results.sort(key=lambda x: x[0])
+
+update_found = False
+table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n"
+
+for program, cur_ver, latest_ver, url, status in results:
+    if status.startswith("🔴"):
+        update_found = True
+    if latest_ver and url:
+        table += f"| {program} | {cur_ver} | {latest_ver} | {status} | [下载链接]({url}) | {program_environments.get(program, '通用')} |\n"
+    else:
+        table += f"| {program} | {cur_ver} | N/A | {status} | N/A | {program_environments.get(program, '通用')} |\n"
 
 print(table)
-
 if not update_found:
     print("- 检测结束，所有程序都没有更新的版本")
 print("- 检测结束")
