@@ -376,7 +376,7 @@ def get_latest_version(program, proxies=None):
         if not match:
             raise ValueError(f"xz: 未找到版本号")
         latest_version = match.group(1)
-        download_url = f"download_url = f"https://sourceforge.net/projects/lzmautils/files/xz-{latest_version}.tar.xz"
+        download_url = f"https://sourceforge.net/projects/lzmautils/files/xz-{latest_version}.tar.xz"
         return latest_version, download_url
 
 
