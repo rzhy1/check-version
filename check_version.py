@@ -376,7 +376,7 @@ def get_latest_version(program, proxies=None):
         if not match:
             raise ValueError(f"xz: 未找到版本号")
         latest_version = match.group(1)
-        download_url = f"https://sourceforge.net/projects/lzmautils/files/xz-{latest_version}.tar.xz"
+        download_url = f"https://sourceforge.net/projects/lzmautils/files/xz-{latest_version}.tar.xz/download"
         return latest_version, download_url
 
 
@@ -423,13 +423,11 @@ def fetch_program(program):
         else:
             return program, current_version, latest_version, download_url, "已是最新版"
     except Exception as e:
-        return program, current_version, None, None, f"❌ 获取版本失败: {e}"
+        return program, cur_ver, None, None, f"❌ 获取失败: {str(e)[:80]}"
 
 # ==========================
 # 主调度 - 并发执行
 # ==========================
-update_found = False
-table = "| 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |\n| --- | --- | --- | --- | --- | --- |\n"
 
 results = []
 
