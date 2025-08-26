@@ -17,6 +17,7 @@ current_versions = {
     "c-ares": "1.34.5",
     "expat": "2.7.1",
     "gcc": "15.2.0",
+    "gettext-tools-windows": "0.25",
     "gmp": "6.3.0",
     "gnutls": "3.8.10",
     "gpg-error": "1.55",
@@ -51,6 +52,7 @@ program_environments = {
     "c-ares": "wget、aria2c0、aria2c、aria2c1",
     "expat": "wget、aria2c",
     "gcc": "musl-cross、mingw_w64",
+    "gettext-tools-windows": "aria2c0",
     "gmp": "wget、wget2、aria2c、musl-cross",
     "gnutls": "wget、wget2",
     "gpg-error": "wget",
@@ -222,6 +224,18 @@ def get_latest_version(program, proxies=None):
         latest_version = data["tag_name"].lstrip("v")
         for asset in data["assets"]:
             if asset["name"].endswith(".tar.gz"):
+                download_url = asset["browser_download_url"]
+                return latest_version, download_url
+        download_url = data["assets"][0]["browser_download_url"]
+        return latest_version, download_url
+        
+    elif program == "gettext-tools-windows":
+        url = "https://api.github.com/repos/vslavik/gettext-tools-windows/releases/latest"
+        response = retry(requests.get, url, proxies=proxies,program=program)
+        data = response.json()
+        latest_version = data["tag_name"].lstrip("v")
+        for asset in data["assets"]:
+            if asset["name"].endswith(".zip"):
                 download_url = asset["browser_download_url"]
                 return latest_version, download_url
         download_url = data["assets"][0]["browser_download_url"]
