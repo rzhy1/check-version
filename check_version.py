@@ -107,11 +107,11 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "gmp":
-        url = "https://ftp.gnu.org/gnu/gmp/"
+        url = "https://mirrors.kernel.org/gnu/gmp/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="gmp-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/gmp/gmp-{latest_version}.tar.xz"
+        download_url = f"https://mirrors.kernel.org/gnu/gmp/gmp-{latest_version}.tar.xz"
         return latest_version, download_url
 
     elif program == "isl":
@@ -125,67 +125,67 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "mpfr":
-        url = "https://ftp.gnu.org/gnu/mpfr/"
+        url = "https://mirrors.kernel.org/gnu/mpfr/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="mpfr-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/mpfr/mpfr-{latest_version}.tar.xz"
+        download_url = f"https://mirrors.kernel.org/gnu/mpfr/mpfr-{latest_version}.tar.xz"
         return latest_version, download_url
 
     elif program == "mpc":
-        url = "https://ftp.gnu.org/gnu/mpc/"
+        url = "https://mirrors.kernel.org/gnu/mpc/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="mpc-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/mpc/mpc-{latest_version}.tar.gz"
+        download_url = f"https://mirrors.kernel.org/gnu/mpc/mpc-{latest_version}.tar.gz"
         return latest_version, download_url
 
     elif program == "binutils":
-        url = "https://ftp.gnu.org/gnu/binutils/"
+        url = "https://mirrors.kernel.org/gnu/binutils/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="binutils-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/binutils/binutils-{latest_version}.tar.xz"
+        download_url = f"https://mirrors.kernel.org/gnu/binutils/binutils-{latest_version}.tar.xz"
         return latest_version, download_url
 
     elif program == "gcc":
-        url = "https://ftp.gnu.org/gnu/gcc/"
+        url = "https://mirrors.kernel.org/gnu/gcc/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="gcc-([0-9.]+)/"', response.text)
         if not matches:
-            return current_versions["gcc"], f"https://ftp.gnu.org/gnu/gcc/gcc-{current_versions['gcc']}/gcc-{current_versions['gcc']}.tar.xz"
+            return current_versions["gcc"], f"https://mirrors.kernel.org/gnu/gcc/gcc-{current_versions['gcc']}/gcc-{current_versions['gcc']}.tar.xz"
 
         version_matches = [m for m in matches if re.match(r"^\d+(\.\d+)+$", m)]
         if not version_matches:
-            return current_versions["gcc"], f"https://ftp.gnu.org/gnu/gcc/gcc-{current_versions['gcc']}/gcc-{current_versions['gcc']}.tar.xz"
+            return current_versions["gcc"], f"https://mirrors.kernel.org/gnu/gcc/gcc-{current_versions['gcc']}/gcc-{current_versions['gcc']}.tar.xz"
 
         latest_version = max(version_matches, key=version.parse)
-        download_url = f"https://ftp.gnu.org/gnu/gcc/gcc-{latest_version}/gcc-{latest_version}.tar.xz"
+        download_url = f"https://mirrors.kernel.org/gnu/gcc/gcc-{latest_version}/gcc-{latest_version}.tar.xz"
         return latest_version, download_url
 
     elif program == "nettle":
-        url = "https://ftp.gnu.org/gnu/nettle/"
+        url = "https://mirrors.kernel.org/gnu/nettle/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="nettle-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/nettle/nettle-{latest_version}.tar.gz" # Correct URL - using latest_version
+        download_url = f"https://mirrors.kernel.org/gnu/nettle/nettle-{latest_version}.tar.gz" # Correct URL - using latest_version
         return latest_version, download_url
 
 
     elif program == "libtasn1":
-        url = "https://ftp.gnu.org/gnu/libtasn1/"
+        url = "https://mirrors.kernel.org/gnu/libtasn1/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="libtasn1-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/libtasn1/libtasn1-{latest_version}.tar.gz" # Correct URL - using latest_version
+        download_url = f"https://mirrors.kernel.org/gnu/libtasn1/libtasn1-{latest_version}.tar.gz" # Correct URL - using latest_version
         return latest_version, download_url
 
     elif program == "libunistring":
-        url = "https://ftp.gnu.org/gnu/libunistring/"
+        url = "https://mirrors.kernel.org/gnu/libunistring/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="libunistring-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/libunistring/libunistring-{latest_version}.tar.gz" # Correct URL - using latest_version
+        download_url = f"https://mirrors.kernel.org/gnu/libunistring/libunistring-{latest_version}.tar.gz" # Correct URL - using latest_version
         return latest_version, download_url
 
     elif program == "gpg-error":
@@ -237,19 +237,19 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "libiconv":
-        url = "https://ftp.gnu.org/gnu/libiconv/"
+        url = "https://mirrors.kernel.org/gnu/libiconv/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="libiconv-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/libiconv/libiconv-{latest_version}.tar.gz" # Correct URL - using latest_version
+        download_url = f"https://mirrors.kernel.org/gnu/libiconv/libiconv-{latest_version}.tar.gz" # Correct URL - using latest_version
         return latest_version, download_url
 
     elif program == "libidn2":
-        url = "https://ftp.gnu.org/gnu/libidn/"
+        url = "https://mirrors.kernel.org/gnu/libidn/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="libidn2-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/libidn/libidn2-{latest_version}.tar.gz" # Correct URL - using latest_version
+        download_url = f"https://mirrors.kernel.org/gnu/libidn/libidn2-{latest_version}.tar.gz" # Correct URL - using latest_version
         return latest_version, download_url
 
     elif program == "libpsl":
@@ -329,11 +329,11 @@ def get_latest_version(program, proxies=None):
 
 
     elif program == "libmicrohttpd":
-        url = "https://ftp.gnu.org/gnu/libmicrohttpd/"
+        url = "https://mirrors.kernel.org/gnu/libmicrohttpd/"
         response = retry(requests.get, url, proxies=proxies,program=program)
         matches = re.findall(r'href="libmicrohttpd-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-{latest_version}.tar.gz"
+        download_url = f"https://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-{latest_version}.tar.gz"
         return latest_version, download_url
 
     elif program == "zlib-ng":
