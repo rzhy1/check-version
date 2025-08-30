@@ -423,7 +423,7 @@ def fetch_program(program):
         else:
             return program, current_version, latest_version, download_url, "已是最新版"
     except Exception as e:
-        return program, current_version, None, None, f"❌ 获取失败: {str(e)[:80]}"
+        return program, current_version, None, None, f"❌ 获取失败"
 
 # ==========================
 # 主调度 - 并发执行
