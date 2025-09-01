@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-09-01 22:09:20 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-09-01 23:03:34 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.45 | 2.45 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.tar.xz) | musl-cross、mingw_w64 |
@@ -34,4 +34,3 @@
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
 
 - 检测结束，所有程序都没有更新的版本
-- 检测结束
