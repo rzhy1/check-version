@@ -453,4 +453,3 @@ for program, cur_ver, latest_ver, url, status in results:
 print(table)
 if not update_found:
     print("- 检测结束，所有程序都没有更新的版本")
-print("- 检测结束")
