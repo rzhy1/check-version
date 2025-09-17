@@ -10,7 +10,7 @@ proxies = None  # 不使用代理
 current_versions = {
     "binutils": "2.45",
     "c-ares": "1.34.5",
-    "expat": "2.7.1",
+    "expat": "2.7.2",
     "gcc": "15.2.0",
     "gettext-tools": "0.26",
     "gmp": "6.3.0",
@@ -32,7 +32,7 @@ current_versions = {
     "mpfr": "4.2.2",
     "nettle": "3.10.2",
     "nghttp2": "1.67.1",
-    "openssl": "3.5.2",
+    "openssl": "3.5.3",
     "pcre2": "10.46",
     "sqlite": "3.50.4",
     "xz": "5.8.1",
