@@ -45,7 +45,7 @@ current_versions = {
 program_environments = {
     "binutils": "musl-cross、mingw_w64",
     "c-ares": "wget、aria2c0、aria2c、aria2c1",
-    "expat": "wget、aria2c",
+    "expat": "wget、aria2c0、aria2c",
     "gcc": "musl-cross、mingw_w64",
     "gettext-tools": "aria2c0",
     "gmp": "wget、wget2、aria2c、musl-cross",
