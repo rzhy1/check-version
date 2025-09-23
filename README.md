@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-09-23 18:10:23 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-09-23 20:18:14 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.45 | 2.45 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.tar.xz) | musl-cross、mingw_w64 |
@@ -9,7 +9,7 @@
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
 | gnutls | 3.8.10 | 3.8.10 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz) | wget、wget2 |
 | gpg-error | 1.55 | 1.55 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.55.tar.gz) | wget |
-| gpgme | 2.0.0 | 2.0.0 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.0.tar.bz2) | wget |
+| gpgme | 2.0.0 | 2.0.1 | 🔴🔴 需更新 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.1.tar.bz2) | wget |
 | isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | musl-cross |
 | libassuan | 3.0.2 | 3.0.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2) | wget |
 | libiconv | 1.18 | 1.18 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/libiconv/libiconv-1.18.tar.gz) | wget、wget2 |
@@ -32,5 +32,3 @@
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
 | zlib-ng | 2.2.5 | 2.2.5 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.2.5/zlib-ng-win-arm-compat.zip) | aria2c1 |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
-
-- 检测结束，所有程序都没有更新的版本
