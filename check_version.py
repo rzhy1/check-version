@@ -10,7 +10,7 @@ proxies = None  # 不使用代理
 current_versions = {
     "binutils": "2.45",
     "c-ares": "1.34.5",
-    "expat": "2.7.2",
+    "expat": "2.7.3",
     "gcc": "15.2.0",
     "gettext-tools": "0.26",
     "gmp": "6.3.0",
