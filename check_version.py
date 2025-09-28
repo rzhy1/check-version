@@ -26,7 +26,7 @@ current_versions = {
     "libpsl": "0.21.5",
     "libssh2": "1.11.1",
     "libtasn1": "4.20.0",
-    "libunistring": "1.3",
+    "libunistring": "1.4",
     "libxml2": "2.15.0",
     "mpc": "1.3.1",
     "mpfr": "4.2.2",
