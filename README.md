@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-09-28 06:07:34 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-09-28 08:51:06 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.45 | 2.45 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.tar.xz) | musl-cross、mingw_w64 |
@@ -19,7 +19,7 @@
 | libpsl | 0.21.5 | 0.21.5 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz) | wget、wget2 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
 | libtasn1 | 4.20.0 | 4.20.0 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz) | wget、wget2 |
-| libunistring | 1.3 | 1.3 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/libunistring/libunistring-1.3.tar.gz) | wget、wget2 |
+| libunistring | 1.3 | 1.4 | 🔴🔴 需更新 | [下载链接](https://mirrors.kernel.org/gnu/libunistring/libunistring-1.4.tar.gz) | wget、wget2 |
 | libxml2 | 2.15.0 | 2.15.0 | 已是最新版 | [下载链接](https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.0.tar.xz) | aria2c1 |
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
@@ -32,5 +32,3 @@
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
 | zlib-ng | 2.2.5 | 2.2.5 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.2.5/zlib-ng-win-arm-compat.zip) | aria2c1 |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
-
-- 检测结束，所有程序都没有更新的版本
