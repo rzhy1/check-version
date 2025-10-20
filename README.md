@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-10-20 08:51:00 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-10-20 11:07:42 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.45 | 2.45 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.tar.xz) | musl-cross、mingw_w64 |
