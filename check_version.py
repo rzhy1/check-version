@@ -33,7 +33,7 @@ current_versions = {
     "nettle": "3.10.2",
     "nghttp2": "1.67.1",
     "openssl": "3.6.0",
-    "pcre2": "10.46",
+    "pcre2": "10.47",
     "sqlite": "3.50.4",
     "xz": "5.8.1",
     "zlib": "1.3.1",
