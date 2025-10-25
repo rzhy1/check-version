@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-10-25 16:11:28 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-10-25 18:08:46 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.45 | 2.45 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.tar.xz) | musl-cross、mingw_w64 |
@@ -24,7 +24,7 @@
 | mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 3.10.2 | 3.10.2 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/nettle/nettle-3.10.2.tar.gz) | wget、wget2 |
-| nghttp2 | 1.67.1 | 1.67.1 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.67.1/nghttp2-1.67.1.tar.gz) | wget2 |
+| nghttp2 | 1.67.1 | 1.68.0 | 🔴🔴 需更新 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.68.0/nghttp2-1.68.0.tar.gz) | wget2 |
 | openssl | 3.6.0 | 3.6.0 | 已是最新版 | [下载链接](https://github.com/openssl/openssl/releases/download/openssl-3.6.0/openssl-3.6.0.tar.gz) | wget |
 | pcre2 | 10.47 | 10.47 | 已是最新版 | [下载链接](https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2) | wget、wget2 |
 | sqlite | 3.50.4 | 3.50.4 | 已是最新版 | [下载链接](https://www.sqlite.org/2025/sqlite-autoconf-3500400.tar.gz) | aria2c0、aria2c、aria2c1 |
@@ -32,5 +32,3 @@
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
 | zlib-ng | 2.2.5 | 2.2.5 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.2.5/zlib-ng-win-arm-compat.zip) | aria2c1 |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
-
-- 检测结束，所有程序都没有更新的版本
