@@ -369,14 +369,19 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "xz":
-        url = "https://sourceforge.net/projects/lzmautils/files/"
+        url = "https://tukaani.org/xz/"
         response = retry(requests.get, url, program=program, proxies=proxies)
         html = response.text
-        match = re.search(r'xz-([0-9.]+)\.tar\.gz', html)
-        if not match:
-            raise ValueError(f"xz: 未找到版本号")
-        latest_version = match.group(1)
-        download_url = f"https://sourceforge.net/projects/lzmautils/files/xz-{latest_version}.tar.xz"
+        matches = re.findall(r'xz-([0-9.]+)\.tar\.xz', html)
+        if not matches:
+            url = "https://sourceforge.net/projects/lzmautils/files/"
+            response = retry(requests.get, url, program=program, proxies=proxies)
+            html = response.text
+            matches = re.findall(r'xz-([0-9.]+)\.tar\.(gz|xz)', html)
+            if not matches:
+                raise ValueError(f"xz: 未找到版本号")
+        latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
+        download_url = f"https://tukaani.org/xz/xz-{latest_version}.tar.xz"
         return latest_version, download_url
 
 
