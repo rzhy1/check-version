@@ -369,15 +369,20 @@ def get_latest_version(program, proxies=None):
         return latest_version, download_url
 
     elif program == "xz":
-        url = "https://sourceforge.net/projects/lzmautils/files/"
-        response = retry(requests.get, url, program=program, proxies=proxies)
-        html = response.text
-        matches = re.findall(r'xz-([0-9.]+)\.tar\.(gz|xz)', html)
-        if not matches:
-            raise ValueError(f"xz: 未找到版本号")
-        latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"https://sourceforge.net/projects/lzmautils/files/xz-{latest_version}.tar.xz"
-        return latest_version, download_url
+        url = "https://api.github.com/repos/tukaani-project/xz/releases/latest"
+        try:
+            response = retry(requests.get, url, program=program, proxies=proxies)
+            data = response.json()
+            latest_version = data["tag_name"].lstrip('v') 
+            for asset in data.get("assets", []):
+                if asset["name"].endswith((".tar.gz", ".tar.xz")):
+                    download_url = asset["browser_download_url"]
+                    break
+            else:
+                download_url = f"https://github.com/tukaani-project/xz/archive/refs/tags/{data['tag_name']}.tar.gz"
+            return latest_version, download_url
+        except Exception as e:
+            return get_xz_version_from_official(proxies)
 
 
     elif program == "sqlite":
