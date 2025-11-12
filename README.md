@@ -1,7 +1,7 @@
-### <b><span style="color:black">最新更新时间: 2025-11-12 08:49:41 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-11-12 11:05:06 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
-| binutils | 2.45 | 2.45 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.tar.xz) | musl-cross、mingw_w64 |
+| binutils | 2.45 | 2.45.1 | 🔴🔴 需更新 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.1.tar.xz) | musl-cross、mingw_w64 |
 | c-ares | 1.34.5 | 1.34.5 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.5/c-ares-1.34.5.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
 | expat | 2.7.3 | 2.7.3 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.bz2) | wget、aria2c0、aria2c |
 | gcc | 15.2.0 | 15.2.0 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz) | musl-cross、mingw_w64 |
@@ -32,5 +32,3 @@
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
 | zlib-ng | 2.2.5 | 2.2.5 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.2.5/zlib-ng-win-arm-compat.zip) | aria2c1 |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
-
-- 检测结束，所有程序都没有更新的版本
