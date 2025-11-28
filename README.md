@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2025-11-28 11:04:01 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2025-11-28 11:41:15 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.45.1 | 2.45.1 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.45.1.tar.xz) | musl-cross、mingw_w64 |
@@ -30,5 +30,7 @@
 | sqlite | 3.51.0 | 3.51.0 | 已是最新版 | [下载链接](https://www.sqlite.org/2025/sqlite-autoconf-3510000.tar.gz) | aria2c0、aria2c、aria2c1 |
 | xz | 5.8.1 | 5.8.1 | 已是最新版 | [下载链接](https://github.com/tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.gz) | wget2、aria2c1 |
 | zlib | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz) | aria2c、aria2c0、musl-cross |
-| zlib-ng | 2.2.5 | 2.3.1 | 🔴🔴 需更新 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.3.1/zlib-ng-win-arm64-compat.zip) | aria2c1 |
+| zlib-ng | 2.3.1 | 2.3.1 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.3.1/zlib-ng-win-arm64-compat.zip) | aria2c1 |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
+
+- 检测结束，所有程序都没有更新的版本
