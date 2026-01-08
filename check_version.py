@@ -25,7 +25,7 @@ current_versions = {
     "libmicrohttpd": "1.0.2",
     "libpsl": "0.21.5",
     "libssh2": "1.11.1",
-    "libtasn1": "4.20.0",
+    "libtasn1": "4.21.0",
     "libunistring": "1.4.1",
     "libxml2": "2.15.1",
     "mpc": "1.3.1",
