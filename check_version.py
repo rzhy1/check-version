@@ -32,7 +32,7 @@ current_versions = {
     "mpfr": "4.2.2",
     "nettle": "3.10.2",
     "nghttp2": "1.68.0",
-    "openssl": "3.6.0",
+    "openssl": "3.6.1",
     "pcre2": "10.47",
     "sqlite": "3.51.2",
     "xz": "5.8.2",
