@@ -37,7 +37,7 @@ current_versions = {
     "sqlite": "3.51.2",
     "xz": "5.8.2",
     "zlib": "1.3.1",
-    "zlib-ng": "2.3.2",
+    "zlib-ng": "2.3.3",
     "zstd": "1.5.7",
 }
 
