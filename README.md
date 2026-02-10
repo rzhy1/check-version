@@ -1,7 +1,7 @@
-### <b><span style="color:black">最新更新时间: 2026-02-10 18:18:31 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-02-10 18:39:30 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
-| binutils | 2.45.1 | 2.46.0 | 🔴🔴 需更新 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
+| binutils | 2.46.0 | 2.46.0 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
 | c-ares | 1.34.6 | 1.34.6 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.6/c-ares-1.34.6.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
 | expat | 2.7.4 | 2.7.4 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_7_4/expat-2.7.4.tar.bz2) | wget、aria2c0、aria2c |
 | gcc | 15.2.0 | 15.2.0 | 已是最新版 | [下载链接](https://mirrors.kernel.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz) | musl-cross、mingw_w64 |
