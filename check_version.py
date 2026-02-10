@@ -8,7 +8,7 @@ proxies = None  # 不使用代理
 
 # 定义当前版本和应用环境
 current_versions = {
-    "binutils": "2.45.1",
+    "binutils": "2.46.0",
     "c-ares": "1.34.6",
     "expat": "2.7.4",
     "gcc": "15.2.0",
