@@ -76,7 +76,7 @@ program_environments = {
     "zstd": "wget2、musl-cross",
 }
 
-def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
+def retry(func, url, max_retries=5, delay=2, proxies=None, program=None, timeout=(10, 20)):
     attempts = 0
     while attempts < max_retries:
         try:
@@ -92,7 +92,7 @@ def retry(func, url, max_retries=5, delay=2, proxies=None, program=None):
 def get_latest_version(program, proxies=None):
     if program == "zlib":
         url = "https://api.github.com/repos/madler/zlib/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -100,7 +100,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "zstd":
         url = "https://api.github.com/repos/facebook/zstd/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -108,7 +108,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "gmp":
         url = "https://mirrors.kernel.org/gnu/gmp/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="gmp-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/gmp/gmp-{latest_version}.tar.xz"
@@ -116,7 +116,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "isl":
         url = "https://libisl.sourceforge.io/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="isl-([\d.]+)\.tar\.xz"', response.text)
         if not matches:
             return current_versions["isl"], f"https://libisl.sourceforge.io/isl-{current_versions['isl']}.tar.xz"
@@ -126,7 +126,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "mpfr":
         url = "https://mirrors.kernel.org/gnu/mpfr/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="mpfr-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/mpfr/mpfr-{latest_version}.tar.xz"
@@ -134,7 +134,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "mpc":
         url = "https://mirrors.kernel.org/gnu/mpc/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="mpc-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/mpc/mpc-{latest_version}.tar.gz"
@@ -142,7 +142,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "binutils":
         url = "https://mirrors.kernel.org/gnu/binutils/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="binutils-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/binutils/binutils-{latest_version}.tar.xz"
@@ -150,7 +150,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "gcc":
         url = "https://mirrors.kernel.org/gnu/gcc/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="gcc-([0-9.]+)/"', response.text)
         if not matches:
             return current_versions["gcc"], f"https://mirrors.kernel.org/gnu/gcc/gcc-{current_versions['gcc']}/gcc-{current_versions['gcc']}.tar.xz"
@@ -165,7 +165,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "nettle":
         url = "https://mirrors.kernel.org/gnu/nettle/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="nettle-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/nettle/nettle-{latest_version}.tar.gz" # Correct URL - using latest_version
@@ -174,7 +174,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libtasn1":
         url = "https://mirrors.kernel.org/gnu/libtasn1/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="libtasn1-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/libtasn1/libtasn1-{latest_version}.tar.gz" # Correct URL - using latest_version
@@ -182,7 +182,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libunistring":
         url = "https://mirrors.kernel.org/gnu/libunistring/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="libunistring-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/libunistring/libunistring-{latest_version}.tar.gz" # Correct URL - using latest_version
@@ -190,7 +190,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "gpg-error":
         url = "https://www.gnupg.org/ftp/gcrypt/libgpg-error/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="libgpg-error-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-{latest_version}.tar.gz" # Correct URL - using latest_version
@@ -198,7 +198,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libassuan":
         url = "https://www.gnupg.org/ftp/gcrypt/libassuan/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="libassuan-([0-9.]+)\.tar\.(bz2|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-{latest_version}.tar.bz2" # Correct URL - using latest_version
@@ -206,7 +206,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "gpgme":
         url = "https://www.gnupg.org/ftp/gcrypt/gpgme/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="gpgme-([0-9.]+)\.tar\.(bz2|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-{latest_version}.tar.bz2" # Correct URL - using latest_version
@@ -214,7 +214,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "c-ares":
         url = "https://api.github.com/repos/c-ares/c-ares/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         for asset in data["assets"]:
@@ -226,7 +226,7 @@ def get_latest_version(program, proxies=None):
         
     elif program == "gettext-tools":
         url = "https://api.github.com/repos/vslavik/gettext-tools-windows/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         for asset in data["assets"]:
@@ -238,7 +238,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libiconv":
         url = "https://mirrors.kernel.org/gnu/libiconv/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="libiconv-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/libiconv/libiconv-{latest_version}.tar.gz" # Correct URL - using latest_version
@@ -246,7 +246,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libidn2":
         url = "https://mirrors.kernel.org/gnu/libidn/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="libidn2-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/libidn/libidn2-{latest_version}.tar.gz" # Correct URL - using latest_version
@@ -254,7 +254,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libpsl":
         url = "https://api.github.com/repos/rockdaboot/libpsl/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -262,7 +262,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "pcre2":
         url = "https://api.github.com/repos/PCRE2Project/pcre2/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].replace('pcre2-', '')
         download_url = data["assets"][0]["browser_download_url"]
@@ -270,7 +270,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "expat":
         url = "https://api.github.com/repos/libexpat/libexpat/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("R_").replace('_', '.')
         download_url = data["assets"][0]["browser_download_url"]
@@ -278,7 +278,7 @@ def get_latest_version(program, proxies=None):
         
     elif program == "openssl":
         url = "https://api.github.com/repos/openssl/openssl/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = retry(requests.get, url, proxies=proxies, program=program,timeout=(8, 15))
         data = response.json()
         tag_name = data["tag_name"]
         latest_version = tag_name.lstrip("openssl-")
@@ -293,7 +293,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libmetalink":
         url = "https://api.github.com/repos/metalink-dev/libmetalink/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("release-")
         download_url = data["assets"][0]["browser_download_url"]
@@ -301,7 +301,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "gnutls":
         base_url = "https://www.gnupg.org/ftp/gcrypt/gnutls/"
-        response = retry(requests.get, base_url, proxies=proxies,program=program)
+        response = retry(requests.get, base_url, proxies=proxies,program=program,timeout=(8, 15))
         version_dir_matches = re.findall(r'href="v([\d.]+)"', response.text)
         if not version_dir_matches:
             return current_versions["gnutls"], f"https://www.gnupg.org/ftp/gcrypt/gnutls/gnutls-{current_versions['gnutls']}.tar.xz"
@@ -317,7 +317,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "nghttp2":
         url = "https://api.github.com/repos/nghttp2/nghttp2/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         for asset in data["assets"]:
@@ -330,7 +330,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libmicrohttpd":
         url = "https://mirrors.kernel.org/gnu/libmicrohttpd/"
-        response = retry(requests.get, url, proxies=proxies,program=program)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         matches = re.findall(r'href="libmicrohttpd-([0-9.]+)\.tar\.(gz|xz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-{latest_version}.tar.gz"
@@ -338,7 +338,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "zlib-ng":
         url = "https://api.github.com/repos/zlib-ng/zlib-ng/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = retry(requests.get, url, proxies=proxies, program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -346,7 +346,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libssh2":
         url = "https://libssh2.org/download/"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = retry(requests.get, url, proxies=proxies, program=program,timeout=(8, 15))
         matches = re.findall(r'href="libssh2-([0-9.]+)\.tar\.(xz|gz)"', response.text)
         latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
         download_url = f"https://libssh2.org/download/libssh2-{latest_version}.tar.xz"
@@ -354,13 +354,13 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libxml2":
         base_url = "https://download.gnome.org/sources/libxml2/"
-        response = retry(requests.get, base_url, program=program, proxies=proxies)
+        response = retry(requests.get, base_url, program=program, proxies=proxies,timeout=(8, 15))
         html = response.text
         main_versions = re.findall(r'href="(\d+\.\d+/)"', html)
         main_versions = [v.strip('/') for v in main_versions]
         main_versions.sort(key=lambda v: version.parse(v), reverse=True)
         latest_main = main_versions[0]
-        response = retry(requests.get, f"{base_url}{latest_main}/", program=program, proxies=proxies)
+        response = retry(requests.get, f"{base_url}{latest_main}/", program=program, proxies=proxies,timeout=(8, 15))
         html = response.text
         files = re.findall(r'href="(libxml2-(\d+\.\d+\.\d+)\.tar\.xz)"', html)
         latest_file = max(files, key=lambda x: version.parse(x[1]))
@@ -371,7 +371,7 @@ def get_latest_version(program, proxies=None):
     elif program == "xz":
         url = "https://api.github.com/repos/tukaani-project/xz/releases/latest"
         try:
-            response = retry(requests.get, url, program=program, proxies=proxies)
+            response = retry(requests.get, url, program=program, proxies=proxies,timeout=(8, 15))
             data = response.json()
             latest_version = data["tag_name"].lstrip('v') 
             for asset in data.get("assets", []):
@@ -387,14 +387,14 @@ def get_latest_version(program, proxies=None):
 
     elif program == "sqlite":
         index_url = "https://www.sqlite.org/index.html"
-        response = retry(requests.get, index_url, proxies=proxies)
+        response = retry(requests.get, index_url, proxies=proxies,timeout=(8, 15))
         html = response.text
         version_match = re.search(r'>Version ([0-9.]+)<', html)
         if not version_match:
             return None, None
         latest_version = version_match.group(1)
         download_url = "https://www.sqlite.org/download.html"
-        response = retry(requests.get, download_url, proxies=proxies)
+        response = retry(requests.get, download_url, proxies=proxies,timeout=(8, 15))
         html = response.text
         csv_block = re.search(
             r'Download product data for scripts to read(.*?)-->', 
@@ -420,7 +420,7 @@ def get_latest_version(program, proxies=None):
 def fetch_program(program):
     current_version = current_versions[program]
     try:
-        latest_version, download_url = get_latest_version(program, proxies=proxies)
+        latest_version, download_url = get_latest_version(program, proxies=proxies,timeout=(8, 15))
         if latest_version is None or download_url is None:
             return program, current_version, None, None, "⚠️ 获取版本信息失败"
         if version.parse(latest_version) > version.parse(current_version):
