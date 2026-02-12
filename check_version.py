@@ -31,12 +31,13 @@ def select_fastest_mirror():
     ]
     fastest_url = None
     fastest_time = float('inf')
+    
     print("[测速] 正在测试 GNU 镜像响应速度...")
     for mirror in candidates:
-        # 测试根路径，确保镜像可用
         test_url = f"{mirror}/"
         elapsed = measure_response_time(test_url)
         if elapsed is not None:
+            # 格式化输出：左对齐固定宽度，保留3位小数
             print(f"  {mirror:<35} {elapsed:.3f} 秒")
             if elapsed < fastest_time:
                 fastest_time = elapsed
@@ -44,11 +45,14 @@ def select_fastest_mirror():
         else:
             print(f"  {mirror:<35} 失败")
 
+    # 测速完成后打印空行，与后续输出区分
+    print()
+
     if fastest_url is None:
         print("[警告] 所有候选镜像均不可用，使用原始镜像 https://mirrors.kernel.org/gnu")
         return "https://mirrors.kernel.org/gnu"
     else:
-        print(f"[选择] 最快镜像: {fastest_url} ({fastest_time:.3f} 秒)")
+        print(f"[选择] 最快镜像: {fastest_url} ({fastest_time:.3f} 秒)\n")
         return fastest_url
 
 # 执行测速并设置全局镜像基 URL
