@@ -100,7 +100,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "zstd":
         url = "https://api.github.com/repos/facebook/zstd/releases/latest"
-        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15)
+        response = retry(requests.get, url, proxies=proxies,program=program,timeout=(8, 15))
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
