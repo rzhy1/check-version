@@ -1,10 +1,12 @@
-### <b><span style="color:black">最新更新时间: 2026-02-12 21:23:04 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-02-12 21:27:40 CST+0800</span></b> ###
 [测速] 正在测试 GNU 镜像响应速度...
-  https://ftp.gnu.org/gnu             0.238 秒
+  https://ftp.gnu.org/gnu             0.470 秒
   http://mirrors.kernel.org/gnu       失败
-  https://mirrors.aliyun.com/gnu      1.435 秒
+  https://mirrors.aliyun.com/gnu      1.354 秒
   https://mirrors.ustc.edu.cn/gnu     失败
-[选择] 最快镜像: https://ftp.gnu.org/gnu (0.238 秒)
+
+[选择] 最快镜像: https://ftp.gnu.org/gnu (0.470 秒)
+
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.0 | 2.46.0 | 已是最新版 | [下载链接](https://ftp.gnu.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
