@@ -23,12 +23,17 @@ def measure_response_time(url, timeout=(5, 10), max_retries=1):
             time.sleep(0.5)
 
 def select_fastest_mirror():
-    """从候选镜像中选择响应最快的基 URL（不带尾部斜杠）"""
     candidates = [
-        "https://ftp.gnu.org/gnu",
+        "https://ftp.gnu.org/gnu",                 # 官方主站（全球）
         "http://mirrors.kernel.org/gnu",
         "https://mirrors.aliyun.com/gnu",
         "https://mirrors.ustc.edu.cn/gnu"
+        "https://mirrors.tuna.tsinghua.edu.cn/gnu",
+        "https://mirrors.huaweicloud.com/gnu",
+        "https://mirrors.tencent.com/gnu",
+        "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu", # 英国
+        "https://ftp.halifax.rwth-aachen.de/gnu",         # 德国
+        "https://ftp.jaist.ac.jp/pub/GNU"        # 日本（亚洲备用）
     ]
     fastest_url = None
     fastest_time = float('inf')
