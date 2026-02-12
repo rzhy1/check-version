@@ -76,7 +76,7 @@ program_environments = {
     "zstd": "wget2、musl-cross",
 }
 
-def retry(func, url, max_retries=2, delay=2, proxies=None, program=None):
+def retry(func, url, max_retries=2, delay=1, proxies=None, program=None):
     attempts = 0
     while attempts < max_retries:
         try:
