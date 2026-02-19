@@ -27,7 +27,6 @@ def select_fastest_mirror():
         "https://ftp.gnu.org/gnu",                 # 官方主站（全球）
         "http://mirrors.kernel.org/gnu",
         "https://mirrors.aliyun.com/gnu",
-        "https://mirrors.ustc.edu.cn/gnu",
         "https://mirrors.tuna.tsinghua.edu.cn/gnu",
         "https://mirrors.huaweicloud.com/gnu",
         "https://mirrors.tencent.com/gnu",
