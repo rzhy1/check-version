@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2026-03-20 00:44:24 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-03-20 02:39:37 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.0 | 2.46.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
@@ -21,7 +21,7 @@
 | libtasn1 | 4.21.0 | 4.21.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libtasn1/libtasn1-4.21.0.tar.gz) | wget、wget2 |
 | libunistring | 1.4.2 | 1.4.2 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libunistring/libunistring-1.4.2.tar.gz) | wget、wget2 |
 | libxml2 | 2.15.2 | 2.15.2 | 已是最新版 | [下载链接](https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.2.tar.xz) | aria2c1 |
-| mpc | 1.3.1 | 1.3.1 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/mpc/mpc-1.3.1.tar.gz) | musl-cross |
+| mpc | 1.3.1 | 1.4.0 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/mpc/mpc-1.4.0.tar.gz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 3.10.2 | 4.0 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/nettle/nettle-4.0.tar.gz) | wget、wget2 |
 | nghttp2 | 1.68.1 | 1.68.1 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.68.1/nghttp2-1.68.1.tar.gz) | wget2 |
