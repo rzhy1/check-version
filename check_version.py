@@ -85,7 +85,7 @@ current_versions = {
     "libtasn1": "4.21.0",
     "libunistring": "1.4.2",
     "libxml2": "2.15.2",
-    "mpc": "1.3.1",
+    "mpc": "1.4.0",
     "mpfr": "4.2.2",
     "nettle": "3.10.2",
     "nghttp2": "1.68.1",
@@ -202,8 +202,9 @@ def get_latest_version(program, proxies=None):
         url = f"{GNU_MIRROR}/mpc/"
         response = retry(requests.get, url, proxies=proxies, program=program)
         matches = re.findall(r'href="mpc-([0-9.]+)\.tar\.(gz|xz)"', response.text)
-        latest_version = max(matches, key=lambda x: version.parse(x[0]))[0]
-        download_url = f"{GNU_MIRROR}/mpc/mpc-{latest_version}.tar.gz"
+        latest_entry = max(matches, key=lambda x: version.parse(x[0]))
+        latest_version, ext = latest_entry
+        download_url = f"{GNU_MIRROR}/mpc/mpc-{latest_version}.tar.{ext}"
         return latest_version, download_url
 
     elif program == "binutils":
