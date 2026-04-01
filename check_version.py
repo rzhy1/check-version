@@ -92,7 +92,7 @@ current_versions = {
     "openssl": "3.6.1",
     "pcre2": "10.47",
     "sqlite": "3.51.3",
-    "xz": "5.8.2",
+    "xz": "5.8.3",
     "zlib": "1.3.2",
     "zlib-ng": "2.3.3",
     "zstd": "1.5.7",
