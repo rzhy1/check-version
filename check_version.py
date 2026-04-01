@@ -7,40 +7,48 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 proxies = None  # 不使用代理
 
-# ========== 镜像测速 & 自动选择 ==========
-def measure_response_time(url, timeout=(5, 10), max_retries=1):
-    """测量单个镜像的响应时间（秒），失败返回 None"""
-    for attempt in range(max_retries + 1):
-        try:
-            start = time.perf_counter()
-            resp = requests.get(url, proxies=proxies, timeout=timeout)
-            resp.raise_for_status()
-            elapsed = time.perf_counter() - start
-            return elapsed
-        except requests.exceptions.RequestException:
-            if attempt == max_retries:
-                return None
-            time.sleep(0.5)
-
 def select_fastest_mirror():
-    candidates = [
-        "https://ftp.gnu.org/gnu",                 # 官方主站（全球）
-        "http://mirrors.kernel.org/gnu",
+    # 主要镜像（优先测试）
+    primary = [
+        "https://ftp.gnu.org/gnu",
+        "http://mirrors.kernel.org/gnu"
+    ]
+    # 其他候选镜像（仅当主要镜像都失败时才测试）
+    other_mirrors = [
         "https://mirrors.aliyun.com/gnu",
         "https://mirrors.tuna.tsinghua.edu.cn/gnu",
         "https://mirrors.huaweicloud.com/gnu",
         "https://mirrors.tencent.com/gnu",
-        "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu", # 英国
-        "https://ftp.halifax.rwth-aachen.de/gnu",         # 德国
-        "https://ftp.jaist.ac.jp/pub/GNU"        # 日本（亚洲备用）
+        "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu",
+        "https://ftp.halifax.rwth-aachen.de/gnu",
+        "https://ftp.jaist.ac.jp/pub/GNU"
     ]
+
     fastest_url = None
     fastest_time = float('inf')
-    
-    # 测速标题输出到 stderr
-    print("[测速] 正在测试 GNU 镜像响应速度...", file=sys.stderr)
-    
-    for mirror in candidates:
+
+    # 测试主要镜像
+    print("[测速] 正在测试 GNU 主要镜像...", file=sys.stderr)
+    primary_results = []
+    for mirror in primary:
+        test_url = f"{mirror}/"
+        elapsed = measure_response_time(test_url)
+        if elapsed is not None:
+            print(f"  {mirror:<35} {elapsed:.3f} 秒", file=sys.stderr)
+            primary_results.append((mirror, elapsed))
+        else:
+            print(f"  {mirror:<35} 失败", file=sys.stderr)
+
+    # 如果主要镜像中有可用的，直接返回最快的一个
+    if primary_results:
+        fastest_url, fastest_time = min(primary_results, key=lambda x: x[1])
+        print(file=sys.stderr)
+        print(f"[选择] 最快镜像: {fastest_url} ({fastest_time:.3f} 秒)\n", file=sys.stderr)
+        return fastest_url
+
+    # 主要镜像都不可用，继续测试其他镜像
+    print("[测速] 主要镜像均不可用，正在测试其他 GNU 镜像...", file=sys.stderr)
+    for mirror in other_mirrors:
         test_url = f"{mirror}/"
         elapsed = measure_response_time(test_url)
         if elapsed is not None:
@@ -50,9 +58,10 @@ def select_fastest_mirror():
                 fastest_url = mirror
         else:
             print(f"  {mirror:<35} 失败", file=sys.stderr)
-    
-    print(file=sys.stderr)  # 空行，也在 stderr
-    
+
+    print(file=sys.stderr)
+
+    # 若所有镜像均不可用，返回默认镜像
     if fastest_url is None:
         print("[警告] 所有候选镜像均不可用，使用原始镜像 https://mirrors.kernel.org/gnu\n", file=sys.stderr)
         return "https://mirrors.kernel.org/gnu"
