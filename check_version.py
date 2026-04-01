@@ -7,6 +7,20 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 proxies = None  # 不使用代理
 
+def measure_response_time(url, timeout=(5, 10), max_retries=1):
+    """测量单个镜像的响应时间（秒），失败返回 None"""
+    for attempt in range(max_retries + 1):
+        try:
+            start = time.perf_counter()
+            resp = requests.get(url, proxies=proxies, timeout=timeout)
+            resp.raise_for_status()
+            elapsed = time.perf_counter() - start
+            return elapsed
+        except requests.exceptions.RequestException:
+            if attempt == max_retries:
+                return None
+            time.sleep(0.5)
+
 def select_fastest_mirror():
     # 主要镜像（优先测试）
     primary = [
