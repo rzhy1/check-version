@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2026-04-19 22:32:44 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-04-19 23:06:00 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.0 | 2.46.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
@@ -15,16 +15,16 @@
 | libiconv | 1.19 | 1.19 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libiconv/libiconv-1.19.tar.gz) | wget、wget2 |
 | libidn2 | 2.3.8 | 2.3.8 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libidn/libidn2-2.3.8.tar.gz) | wget、wget2 |
 | libmetalink | 0.1.3 | 0.1.3 | 已是最新版 | [下载链接](https://github.com/metalink-dev/libmetalink/releases/download/release-0.1.3/libmetalink-0.1.3.tar.bz2) | wget |
-| libmicrohttpd | 1.0.3 | 1.0.5 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz) | wget2 |
+| libmicrohttpd | 1.0.5 | 1.0.5 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz) | wget2 |
 | libpsl | 0.21.5 | 0.21.5 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz) | wget、wget2 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
 | libtasn1 | 4.21.0 | 4.21.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libtasn1/libtasn1-4.21.0.tar.gz) | wget、wget2 |
 | libunistring | 1.4.2 | 1.4.2 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libunistring/libunistring-1.4.2.tar.gz) | wget、wget2 |
-| libxml2 | 2.15.2 | 2.15.3 | 🔴🔴 需更新 | [下载链接](https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.3.tar.xz) | aria2c1 |
+| libxml2 | 2.15.3 | 2.15.3 | 已是最新版 | [下载链接](https://download.gnome.org/sources/libxml2/2.15/libxml2-2.15.3.tar.xz) | aria2c1 |
 | mpc | 1.4.0 | 1.4.1 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/mpc/mpc-1.4.1.tar.xz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 3.10.2 | 4.0 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/nettle/nettle-4.0.tar.gz) | wget、wget2 |
-| nghttp2 | 1.68.1 | 1.69.0 | 🔴🔴 需更新 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.69.0/nghttp2-1.69.0.tar.gz) | wget2 |
+| nghttp2 | 1.69.0 | 1.69.0 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.69.0/nghttp2-1.69.0.tar.gz) | wget2 |
 | openssl | 3.6.2 | 4.0.0 | 🔴🔴 需更新 | [下载链接](https://github.com/openssl/openssl/releases/download/openssl-4.0.0/openssl-4.0.0.tar.gz) | wget |
 | pcre2 | 10.47 | 10.47 | 已是最新版 | [下载链接](https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2) | wget、wget2 |
 | sqlite | 3.53.0 | 3.53.0 | 已是最新版 | [下载链接](https://www.sqlite.org/2026/sqlite-autoconf-3530000.tar.gz) | aria2c0、aria2c、aria2c1 |
