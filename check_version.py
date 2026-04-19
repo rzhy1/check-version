@@ -108,7 +108,7 @@ current_versions = {
     "libtasn1": "4.21.0",
     "libunistring": "1.4.2",
     "libxml2": "2.15.3",
-    "mpc": "1.4.0",
+    "mpc": "1.4.1",
     "mpfr": "4.2.2",
     "nettle": "3.10.2",
     "nghttp2": "1.69.0",
