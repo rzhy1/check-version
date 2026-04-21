@@ -110,7 +110,7 @@ current_versions = {
     "libxml2": "2.15.3",
     "mpc": "1.4.1",
     "mpfr": "4.2.2",
-    "nettle": "3.10.2",
+    "nettle": "4.0",
     "nghttp2": "1.69.0",
     "openssl": "3.6.2",
     "pcre2": "10.47",
