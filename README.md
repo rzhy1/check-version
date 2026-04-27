@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2026-04-28 03:01:53 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-04-28 04:49:33 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.0 | 2.46.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
@@ -14,7 +14,7 @@
 | libassuan | 3.0.2 | 3.0.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2) | wget |
 | libiconv | 1.19 | 1.19 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libiconv/libiconv-1.19.tar.gz) | wget、wget2 |
 | libidn2 | 2.3.8 | 2.3.8 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libidn/libidn2-2.3.8.tar.gz) | wget、wget2 |
-| libmetalink | 0.1.3 | N/A | ❌ 获取失败 | N/A | wget |
+| libmetalink | 0.1.3 | 0.1.3 | 已是最新版 | [下载链接](https://github.com/metalink-dev/libmetalink/releases/download/release-0.1.3/libmetalink-0.1.3.tar.bz2) | wget |
 | libmicrohttpd | 1.0.5 | 1.0.5 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz) | wget2 |
 | libpsl | 0.21.5 | 0.21.5 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz) | wget、wget2 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
