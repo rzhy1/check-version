@@ -1,10 +1,10 @@
-### <b><span style="color:black">最新更新时间: 2026-04-30 16:00:21 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-04-30 19:21:19 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.0 | 2.46.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
 | c-ares | 1.34.6 | 1.34.6 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.6/c-ares-1.34.6.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
 | expat | 2.8.0 | 2.8.0 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_8_0/expat-2.8.0.tar.bz2) | wget、aria2c0、aria2c |
-| gcc | 15.2.0 | 15.2.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz) | musl-cross、mingw_w64 |
+| gcc | 15.2.0 | 16.1.0 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz) | musl-cross、mingw_w64 |
 | gettext-tools | 0.26 | 0.26 | 已是最新版 | [下载链接](https://github.com/vslavik/gettext-tools-windows/releases/download/v0.26/gettext-tools-windows-0.26.zip) | aria2c0 |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
 | gnutls | 3.8.12 | 3.8.13 | 🔴🔴 需更新 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.13.tar.xz) | wget、wget2 |
