@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2026-05-02 12:49:56 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-05-02 14:00:43 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.0 | 2.46.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.46.0.tar.xz) | musl-cross、mingw_w64 |
@@ -7,7 +7,7 @@
 | gcc | 15.2.0 | 16.1.0 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz) | musl-cross、mingw_w64 |
 | gettext-tools | 0.26 | 0.26 | 已是最新版 | [下载链接](https://github.com/vslavik/gettext-tools-windows/releases/download/v0.26/gettext-tools-windows-0.26.zip) | aria2c0 |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
-| gnutls | 3.8.12 | 3.8.13 | 🔴🔴 需更新 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.13.tar.xz) | wget、wget2 |
+| gnutls | 3.8.13 | 3.8.13 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.13.tar.xz) | wget、wget2 |
 | gpg-error | 1.60 | 1.60 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.60.tar.gz) | wget |
 | gpgme | 2.0.1 | 2.0.1 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.0.1.tar.bz2) | wget |
 | isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | musl-cross |
