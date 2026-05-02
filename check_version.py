@@ -94,7 +94,7 @@ current_versions = {
     "gcc": "15.2.0",
     "gettext-tools": "0.26",
     "gmp": "6.3.0",
-    "gnutls": "3.8.12",
+    "gnutls": "3.8.13",
     "gpg-error": "1.60",
     "gpgme": "2.0.1",
     "isl": "0.27",
