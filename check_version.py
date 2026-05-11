@@ -90,7 +90,7 @@ GNU_MIRROR = select_fastest_mirror()
 current_versions = {
     "binutils": "2.46.0",
     "c-ares": "1.34.6",
-    "expat": "2.8.0",
+    "expat": "2.8.1",
     "gcc": "15.2.0",
     "gettext-tools": "0.26",
     "gmp": "6.3.0",
