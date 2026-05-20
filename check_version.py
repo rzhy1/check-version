@@ -91,7 +91,7 @@ current_versions = {
     "binutils": "2.46.0",
     "c-ares": "1.34.6",
     "expat": "2.8.1",
-    "gcc": "15.2.0",
+    "gcc": "16.1.0",
     "gettext-tools": "0.26",
     "gmp": "6.3.0",
     "gnutls": "3.8.13",
