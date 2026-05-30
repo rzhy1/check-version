@@ -104,6 +104,7 @@ current_versions = {
     "libmetalink": "0.1.3",
     "libmicrohttpd": "1.0.5",
     "libpsl": "0.21.5",
+    "libressl": "4.3.2",
     "libssh2": "1.11.1",
     "libtasn1": "4.21.0",
     "libunistring": "1.4.2",
@@ -138,6 +139,7 @@ program_environments = {
     "libmetalink": "wget",
     "libmicrohttpd": "wget2",
     "libpsl": "wget、wget2",
+    "libressl": "aria2c0",
     "libssh2": "aria2c0、aria2c、aria2c1",
     "libtasn1": "wget、wget2",
     "libunistring": "wget、wget2",
@@ -347,6 +349,17 @@ def get_latest_version(program, proxies=None):
         download_url = data["assets"][0]["browser_download_url"]
         return latest_version, download_url
 
+    elif program == "libressl":
+        base_url = "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/"
+        response = retry(requests.get, base_url, proxies=proxies, program=program)
+        matches = re.findall(r'href="libressl-([0-9.]+)\.tar\.gz"', response.text)
+        if not matches:
+            cur = current_versions["libressl"]
+            return cur, f"{base_url}libressl-{cur}.tar.gz"
+        latest_version = max(matches, key=version.parse)
+        download_url = f"{base_url}libressl-{latest_version}.tar.gz"
+        return latest_version, download_url
+    
     elif program == "pcre2":
         url = "https://api.github.com/repos/PCRE2Project/pcre2/releases/latest"
         response = retry(requests.get, url, proxies=proxies, program=program)
