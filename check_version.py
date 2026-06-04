@@ -115,7 +115,7 @@ current_versions = {
     "nghttp2": "1.69.0",
     "openssl": "3.6.2",
     "pcre2": "10.47",
-    "sqlite": "3.53.1",
+    "sqlite": "3.53.2",
     "xz": "5.8.3",
     "zlib": "1.3.2",
     "zlib-ng": "2.3.3",
