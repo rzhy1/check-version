@@ -148,7 +148,7 @@ program_environments = {
     "mpfr": "musl-cross",
     "nettle": "wget、wget2",
     "nghttp2": "wget2",
-    "openssl":"wget",
+    "openssl":"wget、aria2c0",
     "pcre2": "wget、wget2",
     "sqlite": "aria2c0、aria2c、aria2c1",
     "xz": "wget2、aria2c1",
