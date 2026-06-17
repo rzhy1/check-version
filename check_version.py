@@ -92,7 +92,7 @@ current_versions = {
     "c-ares": "1.34.6",
     "expat": "2.8.1",
     "gcc": "16.1.0",
-    "gettext-tools": "0.26",
+    "gettext-tools": "1.0",
     "gmp": "6.3.0",
     "gnutls": "3.8.13",
     "gpg-error": "1.61",
