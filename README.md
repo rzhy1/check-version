@@ -1,15 +1,15 @@
-### <b><span style="color:black">最新更新时间: 2026-06-26 18:41:29 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-06-26 19:52:34 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.1 | 2.46.1 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.46.1.tar.xz) | musl-cross、mingw_w64 |
 | c-ares | 1.34.6 | 1.34.6 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.6/c-ares-1.34.6.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
-| expat | 2.8.1 | 2.8.2 | 🔴🔴 需更新 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_8_2/expat-2.8.2.tar.bz2) | wget、aria2c0、aria2c |
+| expat | 2.8.2 | 2.8.2 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_8_2/expat-2.8.2.tar.bz2) | wget、aria2c0、aria2c |
 | gcc | 16.1.0 | 16.1.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz) | musl-cross、mingw_w64 |
 | gettext-tools | 1.0 | 1.0 | 已是最新版 | [下载链接](https://github.com/poedit/gettext-tools/releases/download/v1.0/gettext-tools-windows-1.0.zip) | aria2c0 |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
 | gnutls | 3.8.13 | 3.8.13 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.13.tar.xz) | wget、wget2 |
 | gpg-error | 1.61 | 1.61 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.61.tar.gz) | wget |
-| gpgme | 2.1.0 | 2.1.1 | 🔴🔴 需更新 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.1.1.tar.bz2) | wget |
+| gpgme | 2.1.1 | 2.1.1 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.1.1.tar.bz2) | wget |
 | isl | 0.27 | 0.27 | 已是最新版 | [下载链接](https://libisl.sourceforge.io/isl-0.27.tar.xz) | musl-cross |
 | libassuan | 3.0.2 | 3.0.2 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2) | wget |
 | libiconv | 1.19 | 1.19 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libiconv/libiconv-1.19.tar.gz) | wget、wget2 |
