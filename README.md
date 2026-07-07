@@ -1,8 +1,8 @@
-### <b><span style="color:black">最新更新时间: 2026-07-08 00:15:33 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-07-08 03:37:15 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.46.1 | 2.46.1 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.46.1.tar.xz) | musl-cross、mingw_w64 |
-| c-ares | 1.34.6 | 1.34.7 | 🔴🔴 需更新 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.7/c-ares-1.34.7.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
+| c-ares | 1.34.6 | 1.34.8 | 🔴🔴 需更新 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.8/c-ares-1.34.8.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
 | expat | 2.8.2 | 2.8.2 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_8_2/expat-2.8.2.tar.bz2) | wget、aria2c0、aria2c |
 | gcc | 16.1.0 | 16.1.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz) | musl-cross、mingw_w64 |
 | gettext-tools | 1.0 | 1.0 | 已是最新版 | [下载链接](https://github.com/poedit/gettext-tools/releases/download/v1.0/gettext-tools-windows-1.0.zip) | aria2c0 |
