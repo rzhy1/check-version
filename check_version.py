@@ -89,7 +89,7 @@ GNU_MIRROR = select_fastest_mirror()
 # ========== 版本与应用环境定义（保持不变）==========
 current_versions = {
     "binutils": "2.46.1",
-    "c-ares": "1.34.6",
+    "c-ares": "1.34.8",
     "expat": "2.8.2",
     "gcc": "16.1.0",
     "gettext-tools": "1.0",
@@ -97,12 +97,12 @@ current_versions = {
     "gnutls": "3.8.13",
     "gpg-error": "1.61",
     "gpgme": "2.1.2",
-    "isl": "0.27",
+    "isl": "0.28",
     "libassuan": "3.0.2",
     "libiconv": "1.19",
     "libidn2": "2.3.8",
     "libmetalink": "0.1.3",
-    "libmicrohttpd": "1.0.5",
+    "libmicrohttpd": "1.0.6",
     "libpsl": "0.22.0",
     "libressl": "4.3.2",
     "libssh2": "1.11.1",
