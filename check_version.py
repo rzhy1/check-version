@@ -152,7 +152,7 @@ program_environments = {
     "pcre2": "wget、wget2",
     "sqlite": "aria2c0、aria2c、aria2c1",
     "xz": "wget2、aria2c1",
-    "zlib": "aria2c、aria2c0、musl-cross",
+    "zlib": "aria2c、aria2c0、musl-cross、john",
     "zlib-ng": "aria2c1",
     "zstd": "wget2、musl-cross",
 }
