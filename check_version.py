@@ -102,7 +102,7 @@ current_versions = {
     "libiconv": "1.19",
     "libidn2": "2.3.8",
     "libmetalink": "0.1.3",
-    "libmicrohttpd": "1.0.6",
+    "libmicrohttpd": "1.0.7",
     "libpsl": "0.23.0",
     "libressl": "4.3.2",
     "libssh2": "1.11.1",
