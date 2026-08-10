@@ -1,10 +1,10 @@
-### <b><span style="color:black">最新更新时间: 2026-08-10 08:50:14 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-08-10 08:57:45 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.47 | 2.47 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/binutils/binutils-2.47.tar.xz) | musl-cross、mingw_w64 |
 | c-ares | 1.34.8 | 1.34.8 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.8/c-ares-1.34.8.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
 | expat | 2.8.2 | 2.8.2 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_8_2/expat-2.8.2.tar.bz2) | wget、aria2c0、aria2c |
-| gcc | 16.1.0 | 16.2.0 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz) | musl-cross、mingw_w64 |
+| gcc | 16.2.0 | 16.2.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz) | musl-cross、mingw_w64 |
 | gettext-tools | 1.0 | 1.0 | 已是最新版 | [下载链接](https://github.com/poedit/gettext-tools/releases/download/v1.0/gettext-tools-windows-1.0.zip) | aria2c0 |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
 | gnutls | 3.8.13 | 3.8.13 | 已是最新版 | [下载链接](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.13.tar.xz) | wget、wget2 |
@@ -15,7 +15,7 @@
 | libiconv | 1.19 | 1.19 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libiconv/libiconv-1.19.tar.gz) | wget、wget2 |
 | libidn2 | 2.3.8 | 2.3.8 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libidn/libidn2-2.3.8.tar.gz) | wget、wget2 |
 | libmetalink | 0.1.3 | 0.1.3 | 已是最新版 | [下载链接](https://github.com/metalink-dev/libmetalink/releases/download/release-0.1.3/libmetalink-0.1.3.tar.bz2) | wget |
-| libmicrohttpd | 1.0.9 | 1.0.10 | 🔴🔴 需更新 | [下载链接](http://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-1.0.10.tar.gz) | wget2 |
+| libmicrohttpd | 1.0.10 | 1.0.10 | 已是最新版 | [下载链接](http://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-1.0.10.tar.gz) | wget2 |
 | libpsl | 0.23.1 | 0.23.1 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.23.1/libpsl-0.23.1.tar.gz) | wget、wget2 |
 | libressl | 4.3.2 | 4.3.2 | 已是最新版 | [下载链接](https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.3.2.tar.gz) | aria2c0 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
