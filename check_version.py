@@ -90,7 +90,7 @@ GNU_MIRROR = select_fastest_mirror()
 current_versions = {
     "binutils": "2.47",
     "c-ares": "1.34.8",
-    "expat": "2.8.2",
+    "expat": "2.8.3",
     "gcc": "16.2.0",
     "gettext-tools": "1.0",
     "gmp": "6.3.0",
@@ -103,7 +103,7 @@ current_versions = {
     "libidn2": "2.3.8",
     "libmetalink": "0.1.3",
     "libmicrohttpd": "1.0.10",
-    "libpsl": "0.23.1",
+    "libpsl": "0.23.2",
     "libressl": "4.3.2",
     "libssh2": "1.11.1",
     "libtasn1": "4.21.0",
