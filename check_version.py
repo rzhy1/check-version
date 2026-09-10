@@ -116,7 +116,7 @@ current_versions = {
     "openssl": "3.6.3",
     "pcre2": "10.48",
     "sqlite": "3.53.4",
-    "xz": "5.8.3",
+    "xz": "5.8.4",
     "zlib": "1.3.2",
     "zlib-ng": "2.3.3",
     "zstd": "1.5.7",
