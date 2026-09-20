@@ -1,3 +1,4 @@
+import os
 import requests
 import re
 import sys 
@@ -6,6 +7,15 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 proxies = None  # 不使用代理
+
+# ========== 读取 GITHUB_TOKEN 并配置请求头 ==========
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+GITHUB_HEADERS = {
+    "Accept": "application/vnd.github+json"
+}
+if GITHUB_TOKEN:
+    # 按照你的 curl 写法设置 Authorization
+    GITHUB_HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
 
 def measure_response_time(url, timeout=(5, 10), max_retries=1):
     """测量单个镜像的响应时间（秒），失败返回 None"""
@@ -22,12 +32,10 @@ def measure_response_time(url, timeout=(5, 10), max_retries=1):
             time.sleep(0.5)
 
 def select_fastest_mirror():
-    # 主要镜像（优先测试）
     primary = [
         "https://ftp.gnu.org/gnu",
         "http://mirrors.kernel.org/gnu"
     ]
-    # 其他候选镜像（仅当主要镜像都失败时才测试）
     other_mirrors = [
         "https://mirrors.aliyun.com/gnu",
         "https://mirrors.tuna.tsinghua.edu.cn/gnu",
@@ -41,7 +49,6 @@ def select_fastest_mirror():
     fastest_url = None
     fastest_time = float('inf')
 
-    # 测试主要镜像
     print("[测速] 正在测试 GNU 主要镜像...", file=sys.stderr)
     primary_results = []
     for mirror in primary:
@@ -53,14 +60,12 @@ def select_fastest_mirror():
         else:
             print(f"  {mirror:<35} 失败", file=sys.stderr)
 
-    # 如果主要镜像中有可用的，直接返回最快的一个
     if primary_results:
         fastest_url, fastest_time = min(primary_results, key=lambda x: x[1])
         print(file=sys.stderr)
         print(f"[选择] 最快镜像: {fastest_url} ({fastest_time:.3f} 秒)\n", file=sys.stderr)
         return fastest_url
 
-    # 主要镜像都不可用，继续测试其他镜像
     print("[测速] 主要镜像均不可用，正在测试其他 GNU 镜像...", file=sys.stderr)
     for mirror in other_mirrors:
         test_url = f"{mirror}/"
@@ -75,7 +80,6 @@ def select_fastest_mirror():
 
     print(file=sys.stderr)
 
-    # 若所有镜像均不可用，返回默认镜像
     if fastest_url is None:
         print("[警告] 所有候选镜像均不可用，使用原始镜像 https://mirrors.kernel.org/gnu\n", file=sys.stderr)
         return "https://mirrors.kernel.org/gnu"
@@ -83,10 +87,9 @@ def select_fastest_mirror():
         print(f"[选择] 最快镜像: {fastest_url} ({fastest_time:.3f} 秒)\n", file=sys.stderr)
         return fastest_url
 
-# 执行测速并设置全局镜像基 URL
 GNU_MIRROR = select_fastest_mirror()
 
-# ========== 版本与应用环境定义（保持不变）==========
+# ========== 版本与应用环境定义 ==========
 current_versions = {
     "binutils": "2.47",
     "c-ares": "1.34.8",
@@ -157,16 +160,20 @@ program_environments = {
     "zstd": "wget2、musl-cross",
 }
 
-# ========== 增强的 retry 函数（带超时 & 4xx快速失败）==========
-def retry(func, url, max_retries=2, delay=1, proxies=None, program=None, timeout=(10, 20)):
+# ========== 增强的 retry 函数（自动为 GitHub API 注入 Token 认证头）==========
+def retry(func, url, max_retries=2, delay=1, proxies=None, program=None, timeout=(10, 20), headers=None):
     attempts = 0
+    # 若请求的是 api.github.com 且未自定义 headers，则自动使用 GITHUB_HEADERS
+    req_headers = headers
+    if req_headers is None and "api.github.com" in url:
+        req_headers = GITHUB_HEADERS
+
     while attempts < max_retries:
         try:
-            response = func(url, proxies=proxies, timeout=timeout)
+            response = func(url, proxies=proxies, timeout=timeout, headers=req_headers)
             response.raise_for_status()
             return response
         except requests.exceptions.HTTPError as e:
-            # 4xx 客户端错误：不重试，立即抛出
             if e.response is not None and 400 <= e.response.status_code < 500:
                 raise e
             attempts += 1
@@ -179,7 +186,7 @@ def retry(func, url, max_retries=2, delay=1, proxies=None, program=None, timeout
                 raise e
             time.sleep(delay)
 
-# ========== 版本获取函数（镜像基址已全部动态替换）==========
+# ========== 版本获取函数 ==========
 def get_latest_version(program, proxies=None):
     if program == "zlib":
         url = "https://api.github.com/repos/madler/zlib/releases/latest"
@@ -480,8 +487,7 @@ def get_latest_version(program, proxies=None):
             else:
                 download_url = f"https://github.com/tukaani-project/xz/archive/refs/tags/{data['tag_name']}.tar.gz"
             return latest_version, download_url
-        except Exception as e:
-            # 注意：原代码中 get_xz_version_from_official 未定义，这里直接抛出或返回默认
+        except Exception:
             return current_versions["xz"], f"https://github.com/tukaani-project/xz/archive/refs/tags/v{current_versions['xz']}.tar.gz"
 
     elif program == "sqlite":
