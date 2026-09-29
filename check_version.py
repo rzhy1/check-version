@@ -117,7 +117,7 @@ current_versions = {
     "nettle": "4.0",
     "nghttp2": "1.70.0",
     "openssl": "3.6.3",
-    "pcre2": "10.48",
+    "pcre2": "10.49",
     "sqlite": "3.53.4",
     "xz": "5.8.4",
     "zlib": "1.3.2",
