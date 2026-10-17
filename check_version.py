@@ -1,7 +1,7 @@
 import os
 import requests
 import re
-import sys 
+import sys
 from packaging import version
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -151,7 +151,7 @@ program_environments = {
     "mpfr": "musl-cross",
     "nettle": "wget、wget2",
     "nghttp2": "wget2",
-    "openssl":"wget、aria2c0、aria2-next",
+    "openssl": "wget、aria2c0、aria2-next",
     "pcre2": "wget、wget2",
     "sqlite": "aria2c0、aria2c、aria2c1",
     "xz": "wget2、aria2c1",
@@ -186,11 +186,27 @@ def retry(func, url, max_retries=2, delay=1, proxies=None, program=None, timeout
                 raise e
             time.sleep(delay)
 
+# ========== 显式带 Token 的 GitHub API GET 请求 ==========
+# 等价于 shell 中的:
+#   retry curl -s -H "Authorization: token $GITHUB_TOKEN" <url>
+def github_api_get(url, proxies=None, timeout=(10, 20), max_retries=2, delay=1):
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "version-checker",
+    }
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    return retry(
+        requests.get, url,
+        max_retries=max_retries, delay=delay,
+        proxies=proxies, timeout=timeout, headers=headers,
+    )
+
 # ========== 版本获取函数 ==========
 def get_latest_version(program, proxies=None):
     if program == "zlib":
         url = "https://api.github.com/repos/madler/zlib/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -198,7 +214,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "zstd":
         url = "https://api.github.com/repos/facebook/zstd/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -310,7 +326,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "c-ares":
         url = "https://api.github.com/repos/c-ares/c-ares/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         for asset in data["assets"]:
@@ -322,7 +338,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "gettext-tools":
         url = "https://api.github.com/repos/vslavik/gettext-tools-windows/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         for asset in data["assets"]:
@@ -350,7 +366,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libpsl":
         url = "https://api.github.com/repos/rockdaboot/libpsl/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -366,10 +382,10 @@ def get_latest_version(program, proxies=None):
         latest_version = max(matches, key=version.parse)
         download_url = f"{base_url}libressl-{latest_version}.tar.gz"
         return latest_version, download_url
-    
+
     elif program == "pcre2":
         url = "https://api.github.com/repos/PCRE2Project/pcre2/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].replace('pcre2-', '')
         download_url = data["assets"][0]["browser_download_url"]
@@ -377,7 +393,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "expat":
         url = "https://api.github.com/repos/libexpat/libexpat/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("R_").replace('_', '.')
         download_url = data["assets"][0]["browser_download_url"]
@@ -385,7 +401,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "openssl":
         url = "https://api.github.com/repos/openssl/openssl/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         tag_name = data["tag_name"]
         latest_version = tag_name.lstrip("openssl-")
@@ -400,7 +416,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "libmetalink":
         url = "https://api.github.com/repos/metalink-dev/libmetalink/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("release-")
         download_url = data["assets"][0]["browser_download_url"]
@@ -424,7 +440,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "nghttp2":
         url = "https://api.github.com/repos/nghttp2/nghttp2/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         for asset in data["assets"]:
@@ -444,7 +460,7 @@ def get_latest_version(program, proxies=None):
 
     elif program == "zlib-ng":
         url = "https://api.github.com/repos/zlib-ng/zlib-ng/releases/latest"
-        response = retry(requests.get, url, proxies=proxies, program=program)
+        response = github_api_get(url, proxies=proxies)
         data = response.json()
         latest_version = data["tag_name"].lstrip("v")
         download_url = data["assets"][0]["browser_download_url"]
@@ -477,7 +493,7 @@ def get_latest_version(program, proxies=None):
     elif program == "xz":
         url = "https://api.github.com/repos/tukaani-project/xz/releases/latest"
         try:
-            response = retry(requests.get, url, program=program, proxies=proxies)
+            response = github_api_get(url, proxies=proxies)
             data = response.json()
             latest_version = data["tag_name"].lstrip('v')
             for asset in data.get("assets", []):
