@@ -37,10 +37,6 @@ def select_fastest_mirror():
         "http://mirrors.kernel.org/gnu"
     ]
     other_mirrors = [
-        "https://mirrors.aliyun.com/gnu",
-        "https://mirrors.tuna.tsinghua.edu.cn/gnu",
-        "https://mirrors.huaweicloud.com/gnu",
-        "https://mirrors.tencent.com/gnu",
         "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu",
         "https://ftp.halifax.rwth-aachen.de/gnu",
         "https://ftp.jaist.ac.jp/pub/GNU"
@@ -110,7 +106,7 @@ current_versions = {
     "libressl": "4.3.3",
     "libssh2": "1.11.1",
     "libtasn1": "4.21.0",
-    "libunistring": "1.4.2",
+    "libunistring": "1.5",
     "libxml2": "2.15.4",
     "mpc": "1.4.1",
     "mpfr": "4.2.2",
