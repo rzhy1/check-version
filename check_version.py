@@ -88,7 +88,7 @@ GNU_MIRROR = select_fastest_mirror()
 # ========== 版本与应用环境定义 ==========
 current_versions = {
     "binutils": "2.47",
-    "c-ares": "1.34.8",
+    "c-ares": "1.34.9",
     "expat": "2.9.0",
     "gcc": "16.2.0",
     "gettext-tools": "1.0",
