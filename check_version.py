@@ -103,7 +103,7 @@ current_versions = {
     "libmetalink": "0.1.3",
     "libmicrohttpd": "1.0.10",
     "libpsl": "0.23.3",
-    "libressl": "4.3.3",
+    "libressl": "4.4.0",
     "libssh2": "1.11.1",
     "libtasn1": "4.21.0",
     "libunistring": "1.5",
