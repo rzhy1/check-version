@@ -91,7 +91,8 @@ def select_fastest_mirror():
         print(f"[选择] 最快镜像: {fastest_url} ({fastest_time:.3f} 秒)\n", file=sys.stderr)
         return fastest_url
 
-GNU_MIRROR = select_fastest_mirror()
+#GNU_MIRROR = select_fastest_mirror()
+GNU_MIRROR = "https://ftpmirror.gnu.org"
 
 # ========== 版本与应用环境定义 ==========
 current_versions = {
