@@ -34,12 +34,20 @@ def measure_response_time(url, timeout=(5, 10), max_retries=1):
 def select_fastest_mirror():
     primary = [
         "https://ftp.gnu.org/gnu",
+        "https://ftpmirror.gnu.org/",
         "http://mirrors.kernel.org/gnu"
     ]
     other_mirrors = [
         "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu",
         "https://ftp.halifax.rwth-aachen.de/gnu",
-        "https://ftp.jaist.ac.jp/pub/GNU"
+        "https://mirror.ibcp.fr/pub/gnu/",
+        "https://mirror.cyberbits.eu/gnu/",
+        "https://ftp.fau.de/gnu/",
+        "https://ftp.halifax.rwth-aachen.de/gnu/",
+        "https://ftp.nluug.nl/pub/gnu/",
+        "https://mirrors.nju.edu.cn/gnu/",
+        "https://mirrors.tuna.tsinghua.edu.cn/gnu/",
+        "https://mirrors.ustc.edu.cn/gnu/"
     ]
 
     fastest_url = None
