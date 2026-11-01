@@ -107,7 +107,7 @@ current_versions = {
     "gpgme": "2.2.0",
     "isl": "0.28",
     "libassuan": "3.0.2",
-    "libiconv": "1.19",
+    "libiconv": "1.19.1",
     "libidn2": "2.3.8",
     "libmetalink": "0.1.3",
     "libmicrohttpd": "1.0.10",
