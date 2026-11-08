@@ -98,7 +98,7 @@ GNU_MIRROR = "https://ftpmirror.gnu.org"
 current_versions = {
     "binutils": "2.47",
     "c-ares": "1.34.9",
-    "expat": "2.9.0",
+    "expat": "2.10.0",
     "gcc": "16.2.0",
     "gettext-tools": "1.0",
     "gmp": "6.3.0",
@@ -120,12 +120,12 @@ current_versions = {
     "mpc": "1.4.1",
     "mpfr": "4.2.2",
     "nettle": "4.0",
-    "nghttp2": "1.70.0",
+    "nghttp2": "1.71.0",
     "openssl": "3.6.3",
     "pcre2": "10.49",
     "sqlite": "3.54.1",
     "xz": "5.8.4",
-    "zlib": "1.3.2",
+    "zlib": "1.4",
     "zlib-ng": "2.3.3",
     "zstd": "1.5.7",
 }
