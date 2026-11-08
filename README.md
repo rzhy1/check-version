@@ -1,9 +1,9 @@
-### <b><span style="color:black">最新更新时间: 2026-11-08 08:57:11 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-11-08 12:08:25 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.47 | 2.47 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/binutils/binutils-2.47.tar.xz) | musl-cross、mingw_w64 |
 | c-ares | 1.34.9 | 1.34.9 | 已是最新版 | [下载链接](https://github.com/c-ares/c-ares/releases/download/v1.34.9/c-ares-1.34.9.tar.gz) | wget、aria2c0、aria2c、aria2c1 |
-| expat | 2.9.0 | 2.10.0 | 🔴🔴 需更新 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_10_0/expat-2.10.0.tar.bz2) | wget、aria2c0、aria2c |
+| expat | 2.10.0 | 2.10.0 | 已是最新版 | [下载链接](https://github.com/libexpat/libexpat/releases/download/R_2_10_0/expat-2.10.0.tar.bz2) | wget、aria2c0、aria2c |
 | gcc | 16.2.0 | 16.2.0 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz) | musl-cross、mingw_w64 |
 | gettext-tools | 1.0 | 1.0 | 已是最新版 | [下载链接](https://github.com/poedit/gettext-tools/releases/download/v1.0/gettext-tools-windows-1.0.zip) | aria2c0 |
 | gmp | 6.3.0 | 6.3.0 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/gmp/gmp-6.3.0.tar.xz) | wget、wget2、aria2c、musl-cross |
@@ -25,11 +25,11 @@
 | mpc | 1.4.1 | 1.4.1 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/mpc/mpc-1.4.1.tar.xz) | musl-cross |
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 4.0 | 4.0 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/nettle/nettle-4.0.tar.gz) | wget、wget2 |
-| nghttp2 | 1.70.0 | 1.71.0 | 🔴🔴 需更新 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.71.0/nghttp2-1.71.0.tar.gz) | wget2 |
+| nghttp2 | 1.71.0 | 1.71.0 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.71.0/nghttp2-1.71.0.tar.gz) | wget2 |
 | openssl | 3.6.3 | 4.1.0 | 🔴🔴 需更新 | [下载链接](https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz) | wget、aria2c0、aria2-next |
 | pcre2 | 10.49 | 10.49 | 已是最新版 | [下载链接](https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.49/pcre2-10.49.tar.bz2) | wget、wget2 |
 | sqlite | 3.54.1 | 3.54.1 | 已是最新版 | [下载链接](https://www.sqlite.org/2026/sqlite-autoconf-3540100.tar.gz) | aria2c0、aria2c、aria2c1 |
 | xz | 5.8.4 | 5.8.4 | 已是最新版 | [下载链接](https://github.com/tukaani-project/xz/releases/download/v5.8.4/xz-5.8.4.tar.gz) | wget2、aria2c1 |
-| zlib | 1.3.2 | 1.4 | 🔴🔴 需更新 | [下载链接](https://github.com/madler/zlib/releases/download/v1.4/zlib-1.4.tar.gz) | aria2c、aria2c0、musl-cross、john |
+| zlib | 1.4 | 1.4 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.4/zlib-1.4.tar.gz) | aria2c、aria2c0、musl-cross、john |
 | zlib-ng | 2.3.3 | 2.3.3 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.3.3/zlib-ng-win-arm64-compat.zip) | aria2c1 |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/meta/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
