@@ -1,4 +1,4 @@
-### <b><span style="color:black">最新更新时间: 2026-11-12 07:47:04 CST+0800</span></b> ###
+### <b><span style="color:black">最新更新时间: 2026-11-12 11:53:11 CST+0800</span></b> ###
 | 程序 | 当前版本 | 最新版本 | 状态 | 下载地址 | 备注 |
 | --- | --- | --- | --- | --- | --- |
 | binutils | 2.47 | 2.47 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/binutils/binutils-2.47.tar.xz) | musl-cross、mingw_w64 |
@@ -17,7 +17,7 @@
 | libmetalink | 0.1.3 | 0.1.3 | 已是最新版 | [下载链接](https://github.com/metalink-dev/libmetalink/releases/download/release-0.1.3/libmetalink-0.1.3.tar.bz2) | wget |
 | libmicrohttpd | 1.0.10 | 1.0.10 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/libmicrohttpd/libmicrohttpd-1.0.10.tar.gz) | wget2 |
 | libpsl | 0.23.3 | 0.23.3 | 已是最新版 | [下载链接](https://github.com/rockdaboot/libpsl/releases/download/0.23.3/libpsl-0.23.3.tar.gz) | wget、wget2 |
-| libressl | 4.4.0 | 4.4.1 | 🔴🔴 需更新 | [下载链接](https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1.tar.gz) | aria2c0 |
+| libressl | 4.4.1 | 4.4.1 | 已是最新版 | [下载链接](https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1.tar.gz) | aria2c0 |
 | libssh2 | 1.11.1 | 1.11.1 | 已是最新版 | [下载链接](https://libssh2.org/download/libssh2-1.11.1.tar.xz) | aria2c0、aria2c、aria2c1 |
 | libtasn1 | 4.21.0 | 4.21.0 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/libtasn1/libtasn1-4.21.0.tar.gz) | wget、wget2 |
 | libunistring | 1.5 | 1.5 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/libunistring/libunistring-1.5.tar.gz) | wget、wget2 |
@@ -26,10 +26,12 @@
 | mpfr | 4.2.2 | 4.2.2 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/mpfr/mpfr-4.2.2.tar.xz) | musl-cross |
 | nettle | 4.0 | 4.0 | 已是最新版 | [下载链接](https://ftpmirror.gnu.org/nettle/nettle-4.0.tar.gz) | wget、wget2 |
 | nghttp2 | 1.71.0 | 1.71.0 | 已是最新版 | [下载链接](https://github.com/nghttp2/nghttp2/releases/download/v1.71.0/nghttp2-1.71.0.tar.gz) | wget2 |
-| openssl | 3.6.3 | 4.1.0 | 🔴🔴 需更新 | [下载链接](https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz) | wget、aria2c0、aria2-next |
+| openssl | 4.1.0 | 4.1.0 | 已是最新版 | [下载链接](https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz) | wget、aria2c0、aria2-next |
 | pcre2 | 10.49 | 10.49 | 已是最新版 | [下载链接](https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.49/pcre2-10.49.tar.bz2) | wget、wget2 |
 | sqlite | 3.54.1 | 3.54.1 | 已是最新版 | [下载链接](https://www.sqlite.org/2026/sqlite-autoconf-3540100.tar.gz) | aria2c0、aria2c、aria2c1 |
 | xz | 5.8.4 | 5.8.4 | 已是最新版 | [下载链接](https://github.com/tukaani-project/xz/releases/download/v5.8.4/xz-5.8.4.tar.gz) | wget2、aria2c1 |
 | zlib | 1.4 | 1.4 | 已是最新版 | [下载链接](https://github.com/madler/zlib/releases/download/v1.4/zlib-1.4.tar.gz) | aria2c、aria2c0、musl-cross、john |
 | zlib-ng | 2.3.3 | 2.3.3 | 已是最新版 | [下载链接](https://github.com/zlib-ng/zlib-ng/releases/download/2.3.3/zlib-ng-win-arm64-compat.zip) | aria2c1 |
 | zstd | 1.5.7 | 1.5.7 | 已是最新版 | [下载链接](https://github.com/meta/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz) | wget2、musl-cross |
+
+- 检测结束，所有程序都没有更新的版本
