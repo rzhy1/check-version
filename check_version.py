@@ -98,7 +98,7 @@ GNU_MIRROR = "https://ftpmirror.gnu.org"
 current_versions = {
     "binutils": "2.47",
     "c-ares": "1.34.9",
-    "expat": "2.10.0",
+    "expat": "2.11.0",
     "gcc": "16.2.0",
     "gettext-tools": "1.0",
     "gmp": "6.3.0",
@@ -127,7 +127,7 @@ current_versions = {
     "xz": "5.8.4",
     "zlib": "1.4",
     "zlib-ng": "2.3.3",
-    "zstd": "1.5.7",
+    "zstd": "1.6.0",
 }
 
 program_environments = {
